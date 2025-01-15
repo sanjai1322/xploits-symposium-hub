@@ -1,4 +1,5 @@
 import { Flame } from "lucide-react";
+import Timer from "./Timer";
 
 const Hero = () => {
   return (
@@ -31,6 +32,8 @@ const Hero = () => {
         <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent animate-gradient">
           XPLOITS 2025
         </h1>
+        
+        <Timer />
         
         <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-2xl mx-auto animate-fade-in">
           Unleash Your Technical Prowess at the Most Anticipated Tech Symposium
