@@ -18,9 +18,11 @@ const Header = () => {
     <header className={`fixed w-full z-50 transition-all duration-300 ${
       isScrolled ? "bg-background/95 backdrop-blur-md shadow-lg" : "bg-transparent"
     }`}>
+      <div className="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+      
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <div className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+          <div className="text-2xl font-bold bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
             XPLOITS
           </div>
           
@@ -41,7 +43,7 @@ const Header = () => {
                 className="relative text-white hover:text-primary transition-colors group"
               >
                 {item}
-                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
+                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-primary to-secondary scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
               </a>
             ))}
             <button className="px-6 py-2 bg-gradient-to-r from-primary to-secondary text-white rounded-full relative group overflow-hidden">

@@ -4,8 +4,7 @@ import Timer from "./Timer";
 const Hero = () => {
   return (
     <section id="home" className="min-h-screen relative overflow-hidden">
-      {/* Animated background with gradient and particles effect */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#1A1F2C] via-[#2A1F3C] to-[#1A1F2C] animate-gradient-x">
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 animate-gradient-x">
         <div className="absolute inset-0 opacity-30">
           {Array.from({ length: 50 }).map((_, i) => (
             <div

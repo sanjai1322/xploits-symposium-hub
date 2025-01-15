@@ -7,11 +7,11 @@
 
 @layer base {
   :root {
-    --background: 240 10% 3.9%;
+    --background: 240 20% 3.9%;
     --foreground: 0 0% 98%;
-    --card: 240 10% 3.9%;
+    --card: 240 20% 3.9%;
     --card-foreground: 0 0% 98%;
-    --popover: 240 10% 3.9%;
+    --popover: 240 20% 3.9%;
     --popover-foreground: 0 0% 98%;
     --primary: 0 0% 98%;
     --primary-foreground: 240 5.9% 10%;
@@ -34,7 +34,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-gradient-to-br from-background via-background/95 to-background text-foreground;
     font-family: 'Inter', sans-serif;
   }
   h1, h2, h3, h4, h5, h6 {
