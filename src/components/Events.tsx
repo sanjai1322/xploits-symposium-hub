@@ -1,4 +1,4 @@
-import { Trophy, Star, Award } from "lucide-react";
+import { Trophy, Star, Award, Code, FileText } from "lucide-react";
 
 const events = [
   {
@@ -18,21 +18,23 @@ const events = [
   },
   {
     title: "Hackathon",
-    icon: <Trophy className="text-primary" size={32} />,
+    icon: <Code className="text-primary" size={32} />,
     description: "24-hour coding marathon to build solutions for real-world problems."
   },
   {
     title: "Paper Presentation",
-    icon: <Star className="text-primary" size={32} />,
+    icon: <FileText className="text-primary" size={32} />,
     description: "Present your research papers and showcase your technical writing skills."
   }
 ];
 
 const Events = () => {
   return (
-    <section id="events" className="py-20 bg-background/50">
-      <div className="container mx-auto px-6">
-        <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+    <section id="events" className="py-20 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-background via-background/90 to-background" />
+      
+      <div className="container mx-auto px-6 relative z-10">
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent animate-gradient">
           Events
         </h2>
         
@@ -40,14 +42,28 @@ const Events = () => {
           {events.map((event, index) => (
             <div
               key={index}
-              className="card-flip bg-secondary/10 p-8 rounded-2xl hover:transform hover:scale-105 transition-all duration-300"
+              className="group perspective-1000"
+              style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className="card-front flex flex-col items-center">
-                {event.icon}
-                <h3 className="text-2xl font-bold mt-4 mb-2 text-primary">{event.title}</h3>
-              </div>
-              <div className="card-back p-6">
-                <p className="text-gray-300">{event.description}</p>
+              <div className="relative h-64 transition-transform duration-500 transform-style-3d group-hover:rotate-y-180">
+                <div className="absolute inset-0 bg-secondary/10 p-8 rounded-2xl backface-hidden border border-primary/20 group-hover:border-primary/40 transition-colors">
+                  <div className="flex flex-col items-center justify-center h-full">
+                    <div className="mb-4 transform group-hover:scale-110 transition-transform">
+                      {event.icon}
+                    </div>
+                    <h3 className="text-2xl font-bold text-primary group-hover:text-secondary transition-colors">
+                      {event.title}
+                    </h3>
+                  </div>
+                </div>
+                
+                <div className="absolute inset-0 bg-primary/10 p-8 rounded-2xl backface-hidden rotate-y-180 border border-secondary/20 group-hover:border-secondary/40 transition-colors">
+                  <div className="flex items-center justify-center h-full">
+                    <p className="text-gray-300 text-center">
+                      {event.description}
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           ))}
