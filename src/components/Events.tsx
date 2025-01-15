@@ -1,4 +1,5 @@
 import { Trophy, Star, Award, Code, FileText } from "lucide-react";
+import { useEffect, useRef } from "react";
 
 const events = [
   {
@@ -29,12 +30,37 @@ const events = [
 ];
 
 const Events = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section id="events" className="py-20 relative overflow-hidden">
+    <section 
+      ref={sectionRef}
+      id="events" 
+      className="py-20 relative overflow-hidden smooth-scroll-section"
+    >
       <div className="absolute inset-0 bg-gradient-to-br from-background via-background/90 to-background" />
       
       <div className="container mx-auto px-6 relative z-10">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent animate-gradient">
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 gradient-text">
           Events
         </h2>
         
@@ -42,11 +68,11 @@ const Events = () => {
           {events.map((event, index) => (
             <div
               key={index}
-              className="group perspective-1000"
+              className="group perspective-1000 animate-on-scroll"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <div className="relative h-64 transition-transform duration-500 transform-style-3d group-hover:rotate-y-180">
-                <div className="absolute inset-0 bg-secondary/10 p-8 rounded-2xl backface-hidden border border-primary/20 group-hover:border-primary/40 transition-colors">
+                <div className="absolute inset-0 glass-effect p-8 rounded-2xl backface-hidden">
                   <div className="flex flex-col items-center justify-center h-full">
                     <div className="mb-4 transform group-hover:scale-110 transition-transform">
                       {event.icon}
@@ -57,7 +83,7 @@ const Events = () => {
                   </div>
                 </div>
                 
-                <div className="absolute inset-0 bg-primary/10 p-8 rounded-2xl backface-hidden rotate-y-180 border border-secondary/20 group-hover:border-secondary/40 transition-colors">
+                <div className="absolute inset-0 glass-effect p-8 rounded-2xl backface-hidden rotate-y-180">
                   <div className="flex items-center justify-center h-full">
                     <p className="text-gray-300 text-center">
                       {event.description}
