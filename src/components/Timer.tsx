@@ -30,13 +30,13 @@ const Timer = () => {
   return (
     <div className="flex justify-center gap-6">
       {Object.entries(timeLeft).map(([unit, value]) => (
-        <div key={unit} className="relative group">
-          <div className="w-24 h-24 bg-black/40 backdrop-blur-lg rounded-xl border border-primary/20 flex flex-col items-center justify-center animate-pulse-glow transition-all duration-300 group-hover:scale-110">
-            <span className="text-3xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent animate-number-spin">
+        <div key={unit} className="countdown-item group">
+          <div className="relative overflow-hidden">
+            <span className="text-3xl font-bold text-white group-hover:animate-number-spin">
               {value.toString().padStart(2, '0')}
             </span>
-            <span className="text-sm text-gray-400 mt-1 capitalize">{unit}</span>
           </div>
+          <span className="text-sm text-gray-400 mt-2 capitalize">{unit}</span>
         </div>
       ))}
     </div>

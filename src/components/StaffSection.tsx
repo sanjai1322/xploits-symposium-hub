@@ -26,17 +26,17 @@ const StaffSection = () => {
     {
       name: "Dr. John Doe",
       role: "Head of Department",
-      image: "/placeholder.svg"
+      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e"
     },
     {
       name: "Prof. Jane Smith",
       role: "Senior Professor",
-      image: "/placeholder.svg"
+      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330"
     },
     {
       name: "Dr. Mike Johnson",
       role: "Technical Lead",
-      image: "/placeholder.svg"
+      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e"
     }
   ];
 
@@ -50,7 +50,7 @@ const StaffSection = () => {
           {staffMembers.map((member, index) => (
             <Card key={index} className="staff-card opacity-0 bg-background/20 backdrop-blur-sm border-primary/20 hover:border-primary/50 transition-all duration-300 group">
               <CardContent className="p-6">
-                <div className="relative w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden group-hover:scale-105 transition-transform duration-300">
+                <div className="relative w-32 h-40 mx-auto mb-4 rounded-xl overflow-hidden group-hover:scale-105 transition-transform duration-300">
                   <img
                     src={member.image}
                     alt={member.name}
