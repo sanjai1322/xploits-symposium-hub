@@ -1,6 +1,5 @@
-import { Flame } from "lucide-react";
-import Timer from "./Timer";
 import { useEffect, useRef } from "react";
+import Timer from "./Timer";
 
 const Hero = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -28,19 +27,19 @@ const Hero = () => {
     <section 
       ref={sectionRef}
       id="home" 
-      className="min-h-screen relative overflow-hidden smooth-scroll-section"
+      className="min-h-screen relative overflow-hidden smooth-scroll-section bg-gradient-to-br from-background via-background/95 to-background/90"
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5 animate-gradient-x">
+      <div className="absolute inset-0">
         <div className="absolute inset-0 opacity-30">
-          {Array.from({ length: 50 }).map((_, i) => (
+          {Array.from({ length: 30 }).map((_, i) => (
             <div
               key={i}
               className="absolute rounded-full bg-primary/20"
               style={{
                 top: `${Math.random() * 100}%`,
                 left: `${Math.random() * 100}%`,
-                width: `${Math.random() * 10 + 5}px`,
-                height: `${Math.random() * 10 + 5}px`,
+                width: `${Math.random() * 3 + 2}px`,
+                height: `${Math.random() * 3 + 2}px`,
                 animation: `float ${Math.random() * 10 + 5}s linear infinite`
               }}
             />
@@ -49,24 +48,27 @@ const Hero = () => {
       </div>
 
       <div className="container mx-auto px-6 relative z-10 flex flex-col items-center justify-center min-h-screen text-center">
-        <div className="animate-float mb-8 relative group">
-          <Flame size={84} className="text-primary animate-pulse group-hover:text-secondary transition-colors duration-300" />
-          <div className="absolute inset-0 bg-primary/20 blur-xl rounded-full scale-150 animate-pulse" />
+        <div className="mb-12">
+          <img 
+            src="/lovable-uploads/e7be3152-f7d6-4327-8a4b-7767aeebf22e.png" 
+            alt="Xploits Logo" 
+            className="w-48 h-48 object-contain animate-float"
+          />
         </div>
         
-        <h1 className="text-6xl md:text-8xl font-bold mb-6 gradient-text animate-slide-down">
+        <h1 className="text-6xl md:text-8xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent animate-fade">
           XPLOITS 2025
         </h1>
         
         <Timer />
         
-        <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-2xl mx-auto animate-slide-up">
+        <p className="text-xl md:text-2xl text-gray-300 mt-12 max-w-2xl mx-auto animate-fade">
           Unleash Your Technical Prowess at the Most Anticipated Tech Symposium
         </p>
         
-        <button className="px-8 py-4 glass-effect text-white rounded-full text-lg font-semibold relative group overflow-hidden hover-scale animate-fade">
+        <button className="mt-12 px-8 py-4 bg-gradient-to-r from-primary to-secondary text-white rounded-full text-lg font-semibold relative group overflow-hidden hover:scale-105 transition-all duration-300">
           <span className="relative z-10">Register Now</span>
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          <div className="absolute inset-0 bg-gradient-to-r from-secondary to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         </button>
       </div>
     </section>
