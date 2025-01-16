@@ -73,32 +73,28 @@ const Events = () => {
           {events.map((event, index) => (
             <div
               key={index}
-              className="group"
+              className="group hover:scale-105 transition-all duration-300"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className="relative aspect-video transition-all duration-500 transform-gpu group-hover:scale-105">
-                <div className="absolute inset-0 backdrop-blur-lg bg-black/40 rounded-2xl overflow-hidden border border-primary/20">
-                  <div className="relative h-1/2">
-                    <img 
-                      src={event.image} 
-                      alt={event.title}
-                      className="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-300"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent" />
-                  </div>
-                  <div className="p-6">
-                    <div className="flex items-center justify-center mb-4">
-                      <div className="transform group-hover:scale-110 transition-transform duration-300">
-                        {event.icon}
-                      </div>
+              <div className="relative aspect-video rounded-2xl overflow-hidden">
+                <img 
+                  src={event.image} 
+                  alt={event.title}
+                  className="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent" />
+                <div className="absolute inset-0 backdrop-blur-sm bg-black/40 p-6 flex flex-col justify-end transform translate-y-1/2 group-hover:translate-y-0 transition-transform duration-300">
+                  <div className="flex items-center justify-center mb-4">
+                    <div className="transform group-hover:scale-110 transition-transform duration-300">
+                      {event.icon}
                     </div>
-                    <h3 className="text-2xl font-bold text-primary group-hover:text-secondary transition-colors mb-3">
-                      {event.title}
-                    </h3>
-                    <p className="text-gray-400 text-sm">
-                      {event.description}
-                    </p>
                   </div>
+                  <h3 className="text-2xl font-bold text-primary group-hover:text-secondary transition-colors mb-3">
+                    {event.title}
+                  </h3>
+                  <p className="text-gray-400 text-sm transform opacity-0 group-hover:opacity-100 transition-all duration-300">
+                    {event.description}
+                  </p>
                 </div>
               </div>
             </div>

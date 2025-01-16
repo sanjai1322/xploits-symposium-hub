@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import Timer from "./Timer";
+import { Sparkles } from "lucide-react";
 
 const Hero = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -27,20 +28,19 @@ const Hero = () => {
     <section 
       ref={sectionRef}
       id="home" 
-      className="min-h-screen relative overflow-hidden smooth-scroll-section bg-gradient-to-br from-background via-background/95 to-background/90"
+      className="min-h-screen pt-20 relative overflow-hidden smooth-scroll-section bg-gradient-to-br from-background via-background/95 to-background/90"
     >
       <div className="absolute inset-0">
         <div className="absolute inset-0 opacity-30">
-          {Array.from({ length: 30 }).map((_, i) => (
-            <div
+          {Array.from({ length: 50 }).map((_, i) => (
+            <Sparkles
               key={i}
-              className="absolute rounded-full bg-primary/20"
+              className="absolute text-primary/20 animate-float"
               style={{
                 top: `${Math.random() * 100}%`,
                 left: `${Math.random() * 100}%`,
-                width: `${Math.random() * 3 + 2}px`,
-                height: `${Math.random() * 3 + 2}px`,
-                animation: `float ${Math.random() * 10 + 5}s linear infinite`
+                animationDuration: `${Math.random() * 10 + 5}s`,
+                transform: `scale(${Math.random() * 0.5 + 0.5})`
               }}
             />
           ))}
@@ -48,7 +48,7 @@ const Hero = () => {
       </div>
 
       <div className="container mx-auto px-6 relative z-10 flex flex-col items-center justify-center min-h-screen text-center">
-        <div className="mb-12">
+        <div className="mb-12 mt-[-80px]">
           <img 
             src="/lovable-uploads/e7be3152-f7d6-4327-8a4b-7767aeebf22e.png" 
             alt="Xploits Logo" 
