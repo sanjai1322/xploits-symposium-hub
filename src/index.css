@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -40,47 +40,18 @@
   
   body {
     @apply bg-gradient-to-br from-background via-background/95 to-background text-foreground;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Space Grotesk', sans-serif;
-  }
-}
-
-@layer utilities {
-  .perspective-1000 {
-    perspective: 1000px;
-  }
-  
-  .transform-style-3d {
-    transform-style: preserve-3d;
-  }
-  
-  .backface-hidden {
-    backface-visibility: hidden;
-  }
-  
-  .rotate-y-180 {
-    transform: rotateY(180deg);
-  }
-  
-  .animate-on-scroll {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  
-  .animate-on-scroll.visible {
-    opacity: 1;
-    transform: translateY(0);
+    font-family: 'Outfit', sans-serif;
   }
 }
 
 .smooth-scroll-section {
   opacity: 0;
-  transform: translateY(50px);
-  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(30px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .smooth-scroll-section.visible {
@@ -97,9 +68,27 @@
 }
 
 .gradient-text {
-  @apply bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent;
+  @apply bg-gradient-to-r from-violet-500 via-purple-500 to-emerald-500 bg-clip-text text-transparent;
 }
 
 .glass-effect {
   @apply backdrop-blur-lg bg-white/5 border border-white/10;
+}
+
+.countdown-item {
+  @apply relative flex flex-col items-center justify-center w-20 h-20 md:w-24 md:h-24 bg-black/30 backdrop-blur-sm rounded-xl border border-violet-500/20;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 5px theme('colors.violet.500/20'),
+                0 0 10px theme('colors.violet.500/20'),
+                0 0 15px theme('colors.violet.500/20');
+  }
+  to {
+    box-shadow: 0 0 10px theme('colors.violet.500/40'),
+                0 0 20px theme('colors.violet.500/40'),
+                0 0 30px theme('colors.violet.500/40');
+  }
 }

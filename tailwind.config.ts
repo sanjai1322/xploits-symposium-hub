@@ -25,11 +25,11 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#6d28d9",
+          DEFAULT: "#8b5cf6",
           foreground: "#ffffff",
         },
         secondary: {
-          DEFAULT: "#1e40af",
+          DEFAULT: "#6366f1",
           foreground: "#ffffff",
         },
         accent: {
@@ -62,14 +62,6 @@ export default {
           "0%": { transform: "translateY(-100px)", opacity: "0" },
           "100%": { transform: "translateY(0)", opacity: "1" },
         },
-        "slide-left": {
-          "0%": { transform: "translateX(-100px)", opacity: "0" },
-          "100%": { transform: "translateX(0)", opacity: "1" },
-        },
-        "slide-right": {
-          "0%": { transform: "translateX(100px)", opacity: "0" },
-          "100%": { transform: "translateX(0)", opacity: "1" },
-        },
         "scale": {
           "0%": { transform: "scale(0.8)", opacity: "0" },
           "100%": { transform: "scale(1)", opacity: "1" },
@@ -89,8 +81,6 @@ export default {
         "float": "float 6s ease-in-out infinite",
         "slide-up": "slide-up 0.6s ease-out",
         "slide-down": "slide-down 0.6s ease-out",
-        "slide-left": "slide-left 0.6s ease-out",
-        "slide-right": "slide-right 0.6s ease-out",
         "scale": "scale 0.6s ease-out",
         "fade": "fade 0.6s ease-out",
         "rotate": "rotate 20s linear infinite"
