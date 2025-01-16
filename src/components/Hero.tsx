@@ -28,9 +28,15 @@ const Hero = () => {
     <section 
       ref={sectionRef}
       id="home" 
-      className="min-h-screen pt-20 relative overflow-hidden smooth-scroll-section bg-gradient-to-br from-background via-background/95 to-background/90"
+      className="min-h-screen relative overflow-hidden smooth-scroll-section"
+      style={{
+        backgroundImage: "url('https://images.unsplash.com/photo-1470813740244-df37b8c1edcb')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat"
+      }}
     >
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 bg-background/80 backdrop-blur-sm">
         <div className="absolute inset-0 opacity-30">
           {Array.from({ length: 50 }).map((_, i) => (
             <Sparkles
@@ -47,8 +53,8 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="container mx-auto px-6 relative z-10 flex flex-col items-center justify-center min-h-screen text-center">
-        <div className="mb-12 mt-[-80px]">
+      <div className="container mx-auto px-6 relative z-10 flex flex-col items-center justify-center min-h-screen text-center pt-20">
+        <div className="mb-12">
           <img 
             src="/lovable-uploads/e7be3152-f7d6-4327-8a4b-7767aeebf22e.png" 
             alt="Xploits Logo" 

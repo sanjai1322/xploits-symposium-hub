@@ -5,27 +5,27 @@ const leadershipMembers = [
   {
     name: "Dr. John Smith",
     role: "Chairman",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e"
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=600&fit=crop"
   },
   {
     name: "Prof. Sarah Johnson",
     role: "Director",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330"
+    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=600&fit=crop"
   },
   {
     name: "Dr. Michael Brown",
     role: "Dean",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e"
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=600&fit=crop"
   },
   {
     name: "Prof. Emily Davis",
     role: "Head of Research",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80"
+    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=600&fit=crop"
   },
   {
     name: "Dr. Robert Wilson",
     role: "Technical Director",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d"
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=600&fit=crop"
   }
 ];
 
@@ -33,17 +33,17 @@ const staffMembers = [
   {
     name: "James Anderson",
     role: "Event Coordinator",
-    image: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6"
+    image: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=400&h=600&fit=crop"
   },
   {
     name: "Lisa Chen",
     role: "Technical Lead",
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb"
+    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=600&fit=crop"
   },
   {
     name: "Mark Thompson",
     role: "Operations Manager",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d"
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=600&fit=crop"
   }
 ];
 
