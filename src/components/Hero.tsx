@@ -30,14 +30,13 @@ const Hero = () => {
       id="home" 
       className="min-h-screen relative overflow-hidden smooth-scroll-section"
       style={{
-        backgroundImage: "url('/lovable-uploads/f7d5cefd-7d60-439d-bb0d-f1b2c328cc3c.png')",
+        backgroundImage: "url('https://images.unsplash.com/photo-1470813740244-df37b8c1edcb')",
         backgroundSize: "cover",
         backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        backgroundAttachment: "fixed"
+        backgroundRepeat: "no-repeat"
       }}
     >
-      <div className="absolute inset-0 bg-background/60 backdrop-blur-[2px]">
+      <div className="absolute inset-0 bg-background/80 backdrop-blur-sm">
         <div className="absolute inset-0 opacity-30">
           {Array.from({ length: 50 }).map((_, i) => (
             <Sparkles
@@ -54,32 +53,29 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="container mx-auto px-6 relative z-10 flex flex-col items-center justify-center min-h-screen">
-        <div className="fixed top-24 left-1/2 transform -translate-x-1/2 w-96 h-96 z-20">
+      <div className="container mx-auto px-6 relative z-10 flex flex-col items-center justify-center min-h-screen text-center pt-20">
+        <div className="mb-12">
           <img 
             src="/lovable-uploads/e7be3152-f7d6-4327-8a4b-7767aeebf22e.png" 
             alt="Xploits Logo" 
-            className="w-full h-full object-contain animate-float"
-            style={{ filter: "drop-shadow(0 0 20px rgba(99, 102, 241, 0.5))" }}
+            className="w-48 h-48 object-contain animate-float"
           />
         </div>
         
-        <div className="mt-96 pt-24 space-y-12">
-          <h1 className="text-6xl md:text-8xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent animate-pulse-glow">
-            XPLOITS 2025
-          </h1>
-          
-          <Timer />
-          
-          <p className="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto animate-fade">
-            Unleash Your Technical Prowess at the Most Anticipated Tech Symposium
-          </p>
-          
-          <button className="mt-8 px-8 py-4 bg-gradient-to-r from-primary to-secondary text-white rounded-full text-lg font-semibold relative group overflow-hidden hover:scale-105 transition-all duration-300">
-            <span className="relative z-10">Register Now</span>
-            <div className="absolute inset-0 bg-gradient-to-r from-secondary to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          </button>
-        </div>
+        <h1 className="text-6xl md:text-8xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent animate-fade">
+          XPLOITS 2025
+        </h1>
+        
+        <Timer />
+        
+        <p className="text-xl md:text-2xl text-gray-300 mt-12 max-w-2xl mx-auto animate-fade">
+          Unleash Your Technical Prowess at the Most Anticipated Tech Symposium
+        </p>
+        
+        <button className="mt-12 px-8 py-4 bg-gradient-to-r from-primary to-secondary text-white rounded-full text-lg font-semibold relative group overflow-hidden hover:scale-105 transition-all duration-300">
+          <span className="relative z-10">Register Now</span>
+          <div className="absolute inset-0 bg-gradient-to-r from-secondary to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        </button>
       </div>
     </section>
   );
