@@ -54,7 +54,7 @@ const Hero = () => {
       </div>
 
       <div className="container mx-auto px-6 relative z-10 flex flex-col items-center justify-center min-h-screen text-center">
-        <div className="fixed top-24 left-1/2 transform -translate-x-1/2 w-64 h-64 mb-12">
+        <div className="absolute top-32 left-1/2 transform -translate-x-1/2 w-80 h-80">
           <img 
             src="/lovable-uploads/e7be3152-f7d6-4327-8a4b-7767aeebf22e.png" 
             alt="Xploits Logo" 
@@ -62,7 +62,7 @@ const Hero = () => {
           />
         </div>
         
-        <div className="mt-48">
+        <div className="mt-64">
           <h1 className="text-6xl md:text-8xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent animate-fade">
             XPLOITS 2025
           </h1>

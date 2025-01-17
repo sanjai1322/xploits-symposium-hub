@@ -6,31 +6,31 @@ const events = [
     title: "Code Combat",
     icon: <Trophy className="text-primary" size={32} />,
     description: "Battle it out in our intense coding competition. Solve complex problems and showcase your programming prowess.",
-    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b"
+    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=1920&h=1080&fit=crop"
   },
   {
     title: "Tech Quiz",
     icon: <Star className="text-primary" size={32} />,
     description: "Test your technical knowledge across various domains in this fast-paced quiz competition.",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475"
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1920&h=1080&fit=crop"
   },
   {
     title: "Project Expo",
     icon: <Award className="text-primary" size={32} />,
     description: "Present your innovative projects and get feedback from industry experts.",
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6"
+    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1920&h=1080&fit=crop"
   },
   {
     title: "Hackathon",
     icon: <Code className="text-primary" size={32} />,
     description: "24-hour coding marathon to build solutions for real-world problems.",
-    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
+    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=1920&h=1080&fit=crop"
   },
   {
     title: "Paper Presentation",
     icon: <FileText className="text-primary" size={32} />,
     description: "Present your research papers and showcase your technical writing skills.",
-    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c"
+    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1920&h=1080&fit=crop"
   }
 ];
 
@@ -76,7 +76,7 @@ const Events = () => {
               className="group hover:scale-105 transition-all duration-300"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className="relative aspect-video rounded-2xl overflow-hidden">
+              <div className="relative w-full aspect-video rounded-2xl overflow-hidden">
                 <img 
                   src={event.image} 
                   alt={event.title}
