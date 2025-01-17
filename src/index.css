@@ -28,17 +28,15 @@
     --ring: 240 4.9% 83.9%;
   }
 
-  * {
-    @apply border-border scroll-smooth;
-  }
-  
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
   
   body {
     @apply bg-gradient-to-br from-background via-background/95 to-background text-foreground;
     font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
   }
   
   h1, h2, h3, h4, h5, h6 {
@@ -71,6 +69,22 @@
 
 .glass-effect {
   @apply backdrop-blur-lg bg-white/5 border border-white/10;
+}
+
+.scroll-indicator {
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
 }
 
 .countdown-item {

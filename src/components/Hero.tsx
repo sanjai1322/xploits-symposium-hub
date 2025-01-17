@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import Timer from "./Timer";
 import { Sparkles } from "lucide-react";
+import { Button } from "./ui/button";
 
 const Hero = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -24,19 +25,27 @@ const Hero = () => {
     return () => observer.disconnect();
   }, []);
 
+  const scrollToAbout = () => {
+    const aboutSection = document.getElementById('about');
+    if (aboutSection) {
+      aboutSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section 
       ref={sectionRef}
       id="home" 
       className="min-h-screen relative overflow-hidden smooth-scroll-section"
       style={{
-        backgroundImage: "url('https://images.unsplash.com/photo-1470813740244-df37b8c1edcb')",
+        backgroundImage: "url('/lovable-uploads/c2e8bfa3-d560-4120-af73-9f0cf5ebf157.png')",
         backgroundSize: "cover",
         backgroundPosition: "center",
-        backgroundRepeat: "no-repeat"
+        backgroundRepeat: "no-repeat",
+        backgroundAttachment: "fixed"
       }}
     >
-      <div className="absolute inset-0 bg-background/80 backdrop-blur-sm">
+      <div className="absolute inset-0 bg-background/60 backdrop-blur-[2px]">
         <div className="absolute inset-0 opacity-30">
           {Array.from({ length: 50 }).map((_, i) => (
             <Sparkles
@@ -53,8 +62,8 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="container mx-auto px-6 relative z-10 flex flex-col items-center justify-center min-h-screen text-center pt-20">
-        <div className="mb-12">
+      <div className="container mx-auto px-6 relative z-10 flex flex-col items-center justify-center min-h-screen text-center">
+        <div className="mb-12 mt-20">
           <img 
             src="/lovable-uploads/e7be3152-f7d6-4327-8a4b-7767aeebf22e.png" 
             alt="Xploits Logo" 
@@ -72,10 +81,34 @@ const Hero = () => {
           Unleash Your Technical Prowess at the Most Anticipated Tech Symposium
         </p>
         
-        <button className="mt-12 px-8 py-4 bg-gradient-to-r from-primary to-secondary text-white rounded-full text-lg font-semibold relative group overflow-hidden hover:scale-105 transition-all duration-300">
-          <span className="relative z-10">Register Now</span>
-          <div className="absolute inset-0 bg-gradient-to-r from-secondary to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-        </button>
+        <div className="mt-12 space-y-6">
+          <Button
+            className="px-8 py-6 bg-gradient-to-r from-primary to-secondary hover:from-secondary hover:to-primary text-white rounded-full text-lg font-semibold relative group overflow-hidden transition-all duration-300 transform hover:scale-105 hover:shadow-xl"
+            onClick={() => window.open('#register', '_blank')}
+          >
+            Register Now
+          </Button>
+          
+          <div 
+            onClick={scrollToAbout}
+            className="cursor-pointer animate-bounce mt-12 flex flex-col items-center text-gray-400 hover:text-white transition-colors duration-300"
+          >
+            <span className="text-sm mb-2">Scroll to explore</span>
+            <svg 
+              className="w-6 h-6" 
+              fill="none" 
+              stroke="currentColor" 
+              viewBox="0 0 24 24"
+            >
+              <path 
+                strokeLinecap="round" 
+                strokeLinejoin="round" 
+                strokeWidth={2} 
+                d="M19 14l-7 7m0 0l-7-7m7 7V3"
+              />
+            </svg>
+          </div>
+        </div>
       </div>
     </section>
   );
