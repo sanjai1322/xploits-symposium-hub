@@ -69,33 +69,40 @@ const Events = () => {
           Events
         </h2>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {events.map((event, index) => (
             <div
               key={index}
-              className="group hover:scale-105 transition-all duration-300"
-              style={{ animationDelay: `${index * 100}ms` }}
+              className="group relative overflow-hidden rounded-xl bg-black/30 backdrop-blur-sm border border-white/10 hover:border-primary/50 transition-all duration-500"
             >
-              <div className="relative aspect-video rounded-2xl overflow-hidden">
+              <div className="absolute inset-0">
                 <img 
                   src={event.image} 
                   alt={event.title}
-                  className="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-300"
+                  className="w-full h-full object-cover opacity-40 group-hover:opacity-60 transition-opacity duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent" />
-                <div className="absolute inset-0 backdrop-blur-sm bg-black/40 p-6 flex flex-col justify-end transform translate-y-1/2 group-hover:translate-y-0 transition-transform duration-300">
-                  <div className="flex items-center justify-center mb-4">
-                    <div className="transform group-hover:scale-110 transition-transform duration-300">
-                      {event.icon}
-                    </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+              </div>
+              
+              <div className="relative p-6 flex flex-col h-full min-h-[320px]">
+                <div className="flex-1">
+                  <div className="mb-4 transform group-hover:scale-110 transition-transform duration-300">
+                    {event.icon}
                   </div>
-                  <h3 className="text-2xl font-bold text-primary group-hover:text-secondary transition-colors mb-3">
+                  <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-primary transition-colors">
                     {event.title}
                   </h3>
-                  <p className="text-gray-400 text-sm transform opacity-0 group-hover:opacity-100 transition-all duration-300">
+                  <p className="text-gray-300 group-hover:text-white transition-colors">
                     {event.description}
                   </p>
                 </div>
+                
+                <Button
+                  className="mt-6 w-full bg-white/10 hover:bg-primary/20 border border-white/20 hover:border-primary transition-all duration-300"
+                  onClick={() => window.open(`#${event.title.toLowerCase().replace(' ', '-')}`, '_self')}
+                >
+                  Learn More
+                </Button>
               </div>
             </div>
           ))}

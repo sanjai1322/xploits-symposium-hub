@@ -22,15 +22,19 @@ const Hero = () => {
       observer.observe(sectionRef.current);
     }
 
-    return () => observer.disconnect();
-  }, []);
+    const handleScroll = () => {
+      const aboutSection = document.getElementById('about');
+      if (aboutSection && window.scrollY > window.innerHeight / 2) {
+        aboutSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    };
 
-  const scrollToAbout = () => {
-    const aboutSection = document.getElementById('about');
-    if (aboutSection) {
-      aboutSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+    window.addEventListener('wheel', handleScroll);
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('wheel', handleScroll);
+    };
+  }, []);
 
   return (
     <section 
@@ -81,33 +85,19 @@ const Hero = () => {
           Unleash Your Technical Prowess at the Most Anticipated Tech Symposium
         </p>
         
-        <div className="mt-12 space-y-6">
+        <div className="mt-12">
           <Button
             className="px-8 py-6 bg-gradient-to-r from-primary to-secondary hover:from-secondary hover:to-primary text-white rounded-full text-lg font-semibold relative group overflow-hidden transition-all duration-300 transform hover:scale-105 hover:shadow-xl"
             onClick={() => window.open('#register', '_blank')}
           >
             Register Now
           </Button>
-          
-          <div 
-            onClick={scrollToAbout}
-            className="cursor-pointer animate-bounce mt-12 flex flex-col items-center text-gray-400 hover:text-white transition-colors duration-300"
-          >
-            <span className="text-sm mb-2">Scroll to explore</span>
-            <svg 
-              className="w-6 h-6" 
-              fill="none" 
-              stroke="currentColor" 
-              viewBox="0 0 24 24"
-            >
-              <path 
-                strokeLinecap="round" 
-                strokeLinejoin="round" 
-                strokeWidth={2} 
-                d="M19 14l-7 7m0 0l-7-7m7 7V3"
-              />
-            </svg>
-          </div>
+        </div>
+      </div>
+
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+        <div className="w-6 h-10 border-2 border-white/30 rounded-full p-1">
+          <div className="w-1.5 h-1.5 bg-white rounded-full animate-scroll-mouse" />
         </div>
       </div>
     </section>
