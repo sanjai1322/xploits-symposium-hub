@@ -1,5 +1,6 @@
 import { Trophy, Star, Award, Code, FileText } from "lucide-react";
 import { useEffect, useRef } from "react";
+import { Button } from "./ui/button";
 
 const events = [
   {
