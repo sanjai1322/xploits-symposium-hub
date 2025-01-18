@@ -3,29 +3,29 @@ import { Card, CardContent } from "./ui/card";
 
 const leadershipMembers = [
   {
-    name: "Dr. John Smith",
-    role: "Chairman",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=600&fit=crop"
+    name: "Arun Kumar",
+    role: "Technical Lead",
+    image: "/lovable-uploads/4a9fd3b3-4446-4439-aa46-b2e2a9b8b6ba.png"
   },
   {
-    name: "Prof. Sarah Johnson",
-    role: "Director",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=600&fit=crop"
+    name: "Priya Sharma",
+    role: "Event Coordinator",
+    image: "/lovable-uploads/9ddf7ebd-3313-492f-b639-6b67b097c5e6.png"
   },
   {
-    name: "Dr. Michael Brown",
-    role: "Dean",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=600&fit=crop"
+    name: "Rahul Dev",
+    role: "Creative Director",
+    image: "/lovable-uploads/0b6883e0-1b56-4e13-9d69-4edfaa77b119.png"
   },
   {
-    name: "Prof. Emily Davis",
-    role: "Head of Research",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=600&fit=crop"
+    name: "Lakshmi Priya",
+    role: "Operations Head",
+    image: "/lovable-uploads/3982e581-1a86-4c80-a92e-f61a2c46a49f.png"
   },
   {
-    name: "Dr. Robert Wilson",
-    role: "Technical Director",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=600&fit=crop"
+    name: "Vikram Singh",
+    role: "Marketing Lead",
+    image: "/lovable-uploads/3fe05ba9-4ba7-4e4a-82b1-d4d158470107.png"
   }
 ];
 
@@ -53,11 +53,15 @@ const StaffSection = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
             entry.target.classList.add("animate-fade-in");
           }
         });
       },
-      { threshold: 0.1 }
+      { 
+        threshold: 0.1,
+        rootMargin: '50px'
+      }
     );
 
     document.querySelectorAll(".staff-card").forEach((card) => {

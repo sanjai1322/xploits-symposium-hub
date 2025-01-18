@@ -24,15 +24,32 @@ const Hero = () => {
 
     const handleScroll = () => {
       const aboutSection = document.getElementById('about');
-      if (aboutSection && window.scrollY > window.innerHeight / 2) {
-        aboutSection.scrollIntoView({ behavior: 'smooth' });
-      }
+      if (!aboutSection) return;
+
+      // Use requestAnimationFrame for smooth scrolling
+      requestAnimationFrame(() => {
+        if (window.scrollY > window.innerHeight / 3) {
+          aboutSection.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
     };
 
-    window.addEventListener('wheel', handleScroll);
+    // Debounce scroll event for better performance
+    let scrollTimeout: number;
+    const debouncedScroll = () => {
+      if (scrollTimeout) {
+        window.cancelAnimationFrame(scrollTimeout);
+      }
+      scrollTimeout = requestAnimationFrame(() => handleScroll());
+    };
+
+    window.addEventListener('wheel', debouncedScroll, { passive: true });
     return () => {
       observer.disconnect();
-      window.removeEventListener('wheel', handleScroll);
+      window.removeEventListener('wheel', debouncedScroll);
     };
   }, []);
 
