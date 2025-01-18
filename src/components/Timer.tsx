@@ -28,15 +28,15 @@ const Timer = () => {
   }, [targetDate]);
 
   return (
-    <div className="flex justify-center gap-6">
+    <div className="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-6">
       {Object.entries(timeLeft).map(([unit, value]) => (
-        <div key={unit} className="countdown-item group">
+        <div key={unit} className="countdown-item w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 flex flex-col justify-center items-center group">
           <div className="relative overflow-hidden">
-            <span className="text-3xl font-bold text-white group-hover:animate-number-spin">
+            <span className="text-xl sm:text-2xl md:text-3xl font-bold text-white group-hover:animate-number-spin">
               {value.toString().padStart(2, '0')}
             </span>
           </div>
-          <span className="text-sm text-gray-400 mt-2 capitalize">{unit}</span>
+          <span className="text-xs sm:text-sm text-gray-400 mt-1 capitalize">{unit}</span>
         </div>
       ))}
     </div>

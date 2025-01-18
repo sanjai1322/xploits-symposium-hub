@@ -14,12 +14,15 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleRegisterClick = () => {
+    window.open('https://forms.gle/M2zhZTj9mCv9ZReo6', '_blank');
+  };
+
   return (
     <header 
       className={`fixed w-full z-50 transition-all duration-300 ${
         isScrolled ? "bg-background/95 backdrop-blur-md shadow-lg" : "bg-transparent"
       }`}
-      style={{ top: 0 }}
     >
       <div className="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
       
@@ -51,13 +54,16 @@ const Header = () => {
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
-                className="relative text-white hover:text-primary transition-colors group font-medium text-sm lg:text-base"
+                className="relative text-white hover:text-primary transition-colors group font-medium"
               >
                 {item}
                 <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-primary to-secondary scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
               </a>
             ))}
-            <button className="px-4 py-2 bg-gradient-to-r from-primary to-secondary text-white rounded-full relative group overflow-hidden hover:scale-105 transition-all duration-300 text-sm lg:text-base">
+            <button 
+              onClick={handleRegisterClick}
+              className="px-4 py-2 bg-gradient-to-r from-primary to-secondary text-white rounded-full relative group overflow-hidden hover:scale-105 transition-all duration-300"
+            >
               <span className="relative z-10">Register Now</span>
               <div className="absolute inset-0 bg-gradient-to-r from-secondary to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </button>
@@ -70,13 +76,16 @@ const Header = () => {
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
-                className="block text-white hover:text-primary transition-colors font-medium text-sm"
+                className="block text-white hover:text-primary transition-colors font-medium"
                 onClick={() => setIsOpen(false)}
               >
                 {item}
               </a>
             ))}
-            <button className="w-full px-4 py-2 bg-gradient-to-r from-primary to-secondary text-white rounded-full relative group overflow-hidden text-sm">
+            <button 
+              onClick={handleRegisterClick}
+              className="w-full px-4 py-2 bg-gradient-to-r from-primary to-secondary text-white rounded-full relative group overflow-hidden"
+            >
               <span className="relative z-10">Register Now</span>
               <div className="absolute inset-0 bg-gradient-to-r from-secondary to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </button>
