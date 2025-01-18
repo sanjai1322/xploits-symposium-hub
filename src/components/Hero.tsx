@@ -1,10 +1,11 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Timer from "./Timer";
 import { Sparkles } from "lucide-react";
 import { Button } from "./ui/button";
 
 const Hero = () => {
   const sectionRef = useRef<HTMLElement>(null);
+  const [isScrolling, setIsScrolling] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -22,36 +23,54 @@ const Hero = () => {
       observer.observe(sectionRef.current);
     }
 
-    const handleScroll = () => {
-      const aboutSection = document.getElementById('about');
-      if (!aboutSection) return;
+    let scrollTimeout: number;
+    let lastScrollTime = Date.now();
+    const scrollThreshold = 50; // Minimum time between scroll events in ms
 
-      // Use requestAnimationFrame for smooth scrolling
-      requestAnimationFrame(() => {
+    const handleScroll = () => {
+      const currentTime = Date.now();
+      if (currentTime - lastScrollTime < scrollThreshold) {
+        return;
+      }
+      
+      lastScrollTime = currentTime;
+      if (!isScrolling) {
+        setIsScrolling(true);
+      }
+
+      if (scrollTimeout) {
+        cancelAnimationFrame(scrollTimeout);
+      }
+
+      scrollTimeout = requestAnimationFrame(() => {
+        const aboutSection = document.getElementById('about');
+        if (!aboutSection) return;
+
         if (window.scrollY > window.innerHeight / 3) {
           aboutSection.scrollIntoView({
             behavior: 'smooth',
             block: 'start'
           });
         }
+        
+        setTimeout(() => {
+          setIsScrolling(false);
+        }, 150);
       });
     };
 
-    // Debounce scroll event for better performance
-    let scrollTimeout: number;
-    const debouncedScroll = () => {
-      if (scrollTimeout) {
-        window.cancelAnimationFrame(scrollTimeout);
-      }
-      scrollTimeout = requestAnimationFrame(() => handleScroll());
-    };
+    window.addEventListener('wheel', handleScroll, { passive: true });
+    window.addEventListener('touchmove', handleScroll, { passive: true });
 
-    window.addEventListener('wheel', debouncedScroll, { passive: true });
     return () => {
       observer.disconnect();
-      window.removeEventListener('wheel', debouncedScroll);
+      window.removeEventListener('wheel', handleScroll);
+      window.removeEventListener('touchmove', handleScroll);
+      if (scrollTimeout) {
+        cancelAnimationFrame(scrollTimeout);
+      }
     };
-  }, []);
+  }, [isScrolling]);
 
   return (
     <section 
