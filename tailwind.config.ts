@@ -18,6 +18,9 @@ export default {
       },
     },
     extend: {
+      backgroundImage: {
+        'hero-pattern': "url('/lovable-uploads/9e17c752-e73b-4189-be7a-0625d03b7f38.png')",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

@@ -32,9 +32,10 @@ const Hero = () => {
     <section 
       ref={sectionRef}
       id="home" 
-      className="min-h-screen relative overflow-hidden smooth-scroll-section bg-background pt-20 md:pt-0"
+      className="min-h-screen relative overflow-hidden smooth-scroll-section bg-hero-pattern bg-cover bg-center bg-no-repeat pt-24 md:pt-32"
     >
-      <div className="container mx-auto px-6 relative z-10 flex flex-col items-center justify-center min-h-screen text-center">
+      <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
+      <div className="container mx-auto px-6 relative z-10 flex flex-col items-center justify-center min-h-[calc(100vh-96px)] text-center">
         <div className="mb-12">
           <img 
             src="/lovable-uploads/e7be3152-f7d6-4327-8a4b-7767aeebf22e.png" 
