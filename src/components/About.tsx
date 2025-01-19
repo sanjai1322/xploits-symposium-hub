@@ -1,8 +1,30 @@
 import { Building, Code } from "lucide-react";
+import { useEffect, useRef } from "react";
 
 const About = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section id="about" className="py-20 relative overflow-hidden">
+    <section id="about" className="py-20 relative overflow-hidden smooth-scroll-section" ref={sectionRef}>
       <div className="absolute inset-0 bg-gradient-to-br from-background via-background/90 to-background" />
       
       <div className="container mx-auto px-6 relative z-10">
