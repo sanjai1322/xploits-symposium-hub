@@ -23,7 +23,7 @@ const Footer = () => {
       
       <div className="container mx-auto px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="space-y-4 animate-fade-in">
+          <div className="space-y-4">
             <h3 className="text-xl font-semibold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
               Contact President
             </h3>
@@ -39,22 +39,21 @@ const Footer = () => {
             </div>
           </div>
           
-          <div className="space-y-4 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+          <div className="space-y-4">
             <h3 className="text-xl font-semibold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
               Location
             </h3>
             <div className="flex items-start space-x-2 text-gray-400">
               <MapPin size={18} className="mt-1 flex-shrink-0" />
-              <p>SRM Valliammai Engineering College, Kattankulathur, Chennai</p>
+              <p>123 Tech Avenue, Innovation District, Digital City, DC 12345</p>
             </div>
           </div>
           
-          <div className="space-y-4 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+          <div className="space-y-4">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.268102623864!2d80.03873787507392!3d12.82594418747622!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52f70d79722631%3A0x49afcd4648f94894!2sSRM%20Valliammai%20Engineering%20College!5e0!3m2!1sen!2sin!4v1737311088553!5m2!1sen!2sin"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.2219901290355!2d-74.00369368400567!3d40.71312937933185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a23e28c1191%3A0x49f75d3281df052a!2s150%20Park%20Row%2C%20New%20York%2C%20NY%2010007!5e0!3m2!1sen!2sus!4v1644262070010!5m2!1sen!2sus"
               className="w-full h-48 rounded-lg border border-primary/20"
               loading="lazy"
-              allowFullScreen
             />
           </div>
         </div>

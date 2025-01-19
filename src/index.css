@@ -5,43 +5,140 @@
 @tailwind components;
 @tailwind utilities;
 
-.scroll-reveal {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+:root {
+  --background: 240 20% 3.9%;
+  --foreground: 0 0% 98%;
+  --card: 240 20% 3.9%;
+  --card-foreground: 0 0% 98%;
+  --popover: 240 20% 3.9%;
+  --popover-foreground: 0 0% 98%;
+  --primary: 0 0% 98%;
+  --primary-foreground: 240 5.9% 10%;
+  --secondary: 240 3.7% 15.9%;
+  --secondary-foreground: 0 0% 98%;
+  --muted: 240 3.7% 15.9%;
+  --muted-foreground: 240 5% 64.9%;
+  --accent: 240 3.7% 15.9%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 240 3.7% 15.9%;
+  --input: 240 3.7% 15.9%;
+  --ring: 240 4.9% 83.9%;
 }
 
-.scroll-reveal.visible {
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  height: 100%;
+}
+
+body {
+  @apply bg-gradient-to-br from-background via-background/95 to-background text-foreground;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+  height: 100%;
+  position: relative;
+  padding-top: 0;
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Outfit', sans-serif;
+}
+
+.smooth-scroll-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.smooth-scroll-section.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-@keyframes slideInFromLeft {
-  0% {
-    transform: translateX(-100%);
-    opacity: 0;
+.hover-scale {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+.gradient-text {
+  @apply bg-gradient-to-r from-violet-500 via-purple-500 to-emerald-500 bg-clip-text text-transparent;
+}
+
+.glass-effect {
+  @apply backdrop-blur-lg bg-white/5 border border-white/10;
+}
+
+.scroll-indicator {
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
   }
-  100% {
-    transform: translateX(0);
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+
+.countdown-item {
+  @apply relative flex flex-col items-center justify-center w-20 h-20 md:w-24 md:h-24 bg-black/30 backdrop-blur-sm rounded-xl border border-violet-500/20;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 5px theme('colors.violet.500/20'),
+                0 0 10px theme('colors.violet.500/20'),
+                0 0 15px theme('colors.violet.500/20');
+  }
+  to {
+    box-shadow: 0 0 10px theme('colors.violet.500/40'),
+                0 0 20px theme('colors.violet.500/40'),
+                0 0 30px theme('colors.violet.500/40');
+  }
+}
+
+@keyframes scroll-mouse {
+  0% {
+    transform: translateY(0);
     opacity: 1;
   }
-}
-
-@keyframes slideInFromRight {
-  0% {
-    transform: translateX(100%);
+  100% {
+    transform: translateY(15px);
     opacity: 0;
   }
-  100% {
-    transform: translateX(0);
+}
+
+.animate-scroll-mouse {
+  animation: scroll-mouse 1.5s infinite;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
     opacity: 1;
+    transform: translateY(0);
   }
 }
 
-.slide-in-left {
-  animation: slideInFromLeft 0.8s ease-out forwards;
-}
-
-.slide-in-right {
-  animation: slideInFromRight 0.8s ease-out forwards;
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out forwards;
+  will-change: transform, opacity;
 }
