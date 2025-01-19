@@ -5,17 +5,17 @@ const leadershipMembers = [
   {
     name: "Arun Kumar",
     role: "Technical Lead",
-    image: "/lovable-uploads/4a9fd3b3-4446-4439-aa46-b2e2a9b8b6ba.png"
+    image: "/lovable-uploads/3e409326-6d39-4320-aadb-e4de7ff1ac59.png"
   },
   {
     name: "Priya Sharma",
     role: "Event Coordinator",
-    image: "/lovable-uploads/9ddf7ebd-3313-492f-b639-6b67b097c5e6.png"
+    image: "/lovable-uploads/cfb30667-9eb9-48a0-8354-dd14b2997609.png"
   },
   {
     name: "Rahul Dev",
     role: "Creative Director",
-    image: "/lovable-uploads/0b6883e0-1b56-4e13-9d69-4edfaa77b119.png"
+    image: "/lovable-uploads/57d4118b-e509-49d9-be31-a59cff58f272.png"
   },
   {
     name: "Lakshmi Priya",

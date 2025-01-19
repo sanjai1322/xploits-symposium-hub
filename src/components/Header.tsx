@@ -21,7 +21,7 @@ const Header = () => {
   return (
     <header 
       className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled ? "bg-background shadow-lg" : "bg-background"
+        isScrolled ? "bg-background shadow-lg" : "bg-background/30 backdrop-blur-md"
       }`}
     >
       <div className="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
