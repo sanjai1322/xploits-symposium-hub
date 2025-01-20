@@ -6,7 +6,9 @@ import {
   DialogContent,
   DialogHeader,
   DialogTitle,
+  DialogDescription,
 } from "./ui/dialog";
+import { ScrollArea } from "./ui/scroll-area";
 
 const events = [
   {
@@ -90,7 +92,7 @@ const Events = () => {
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.1, rootMargin: "50px" }
     );
 
     if (sectionRef.current) {
@@ -110,11 +112,11 @@ const Events = () => {
       <section 
         ref={sectionRef}
         id="events" 
-        className="py-20 relative overflow-hidden smooth-scroll-section"
+        className="py-20 relative overflow-hidden"
       >
         <div className="absolute inset-0 bg-gradient-to-br from-background via-background/90 to-background" />
         
-        <div className="container mx-auto px-6 relative z-10">
+        <div className="container mx-auto px-6 relative z-10 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
             Events
           </h2>
@@ -123,13 +125,16 @@ const Events = () => {
             {events.map((event, index) => (
               <div
                 key={index}
-                className="group relative overflow-hidden rounded-xl bg-black/30 backdrop-blur-sm border border-white/10 hover:border-primary/50 transition-all duration-500"
+                className="group relative overflow-hidden rounded-xl bg-black/30 backdrop-blur-sm border border-white/10 hover:border-primary/50 transition-all duration-300 animate-fade-in"
+                style={{
+                  animationDelay: `${index * 100}ms`
+                }}
               >
                 <div className="absolute inset-0">
                   <img 
                     src={event.image} 
                     alt={event.title}
-                    className="w-full h-full object-cover opacity-40 group-hover:opacity-60 transition-opacity duration-500"
+                    className="w-full h-full object-cover opacity-40 group-hover:opacity-60 transition-opacity duration-300"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
                 </div>
@@ -139,10 +144,10 @@ const Events = () => {
                     <div className="mb-4 transform group-hover:scale-110 transition-transform duration-300">
                       {event.icon}
                     </div>
-                    <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-primary transition-colors">
+                    <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-primary transition-colors duration-300">
                       {event.title}
                     </h3>
-                    <p className="text-gray-300 group-hover:text-white transition-colors">
+                    <p className="text-gray-300 group-hover:text-white transition-colors duration-300">
                       {event.description}
                     </p>
                   </div>
@@ -167,18 +172,23 @@ const Events = () => {
               {selectedEvent?.icon}
               {selectedEvent?.title}
             </DialogTitle>
+            <DialogDescription>
+              {selectedEvent?.description}
+            </DialogDescription>
           </DialogHeader>
-          <div className="mt-4">
-            <h4 className="text-lg font-semibold mb-3 text-primary">Rules & Guidelines</h4>
-            <ul className="space-y-2">
-              {selectedEvent?.rules.map((rule, index) => (
-                <li key={index} className="flex items-start gap-2">
-                  <span className="text-primary">•</span>
-                  <span>{rule}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <ScrollArea className="h-[300px] w-full rounded-md border p-4">
+            <div className="pr-4">
+              <h4 className="text-lg font-semibold mb-3 text-primary">Rules & Guidelines</h4>
+              <ul className="space-y-2">
+                {selectedEvent?.rules.map((rule, index) => (
+                  <li key={index} className="flex items-start gap-2">
+                    <span className="text-primary">•</span>
+                    <span>{rule}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </ScrollArea>
         </DialogContent>
       </Dialog>
     </>
