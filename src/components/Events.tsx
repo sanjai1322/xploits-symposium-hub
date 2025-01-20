@@ -1,197 +1,177 @@
-import { Trophy, Star, Award, Code, FileText } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
-import { Button } from "./ui/button";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogDescription,
-} from "./ui/dialog";
+import { useState } from "react";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "./ui/dialog";
 import { ScrollArea } from "./ui/scroll-area";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
 
 const events = [
   {
-    title: "PAPER PRESENTATION",
-    icon: <FileText className="text-primary" size={32} />,
-    description: "Present your research papers and showcase your technical writing skills.",
-    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c",
+    id: 1,
+    name: "PAPER PRESENTATION",
+    description: "Present your innovative ideas and research papers",
     rules: [
-      "Individual or team of 2",
-      "15 minutes presentation time",
-      "Original research work only",
-      "Abstract submission required",
-      "IEEE format mandatory"
+      "Team size: Maximum 2 members per team",
+      "Time limit: 10 minutes presentation + 5 minutes Q&A",
+      "Format: PPT must be in 16:9 ratio",
+      "Topics must be related to current technology trends",
+      "Abstract submission deadline: Check website for updates"
     ]
   },
   {
-    title: "DEV-DOMINATION",
-    icon: <Code className="text-primary" size={32} />,
-    description: "Battle it out in our intense coding competition. Solve complex problems and showcase your programming prowess.",
-    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
+    id: 2,
+    name: "DEV-DOMINATION",
+    description: "Showcase your development skills in this coding challenge",
     rules: [
-      "Time limit of 3 hours",
       "Individual participation only",
-      "Multiple programming languages supported",
-      "Automated testing system",
-      "Points based on code efficiency and correctness"
+      "Time limit: 3 hours",
+      "Choose from: Web Dev, App Dev, or Game Dev",
+      "Use of specified frameworks only",
+      "Code plagiarism will lead to disqualification"
     ]
   },
   {
-    title: "TRAILBLAZERS",
-    icon: <Award className="text-primary" size={32} />,
-    description: "Present your innovative projects and get feedback from industry experts.",
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
+    id: 3,
+    name: "TRAILBLAZERS",
+    description: "Navigate through technical challenges and puzzles",
     rules: [
-      "Team size: 2-4 members",
-      "Project must be original work",
-      "Live demonstration required",
-      "10 minutes presentation time",
-      "Q&A session with judges"
+      "Team size: 2-3 members",
+      "Multiple rounds of technical challenges",
+      "Time limit varies per round",
+      "Both hardware and software challenges",
+      "Teams must complete all challenges to qualify"
     ]
   },
   {
-    title: "TECHQUIZ",
-    icon: <Star className="text-primary" size={32} />,
-    description: "Test your technical knowledge across various domains in this fast-paced quiz competition.",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475",
+    id: 4,
+    name: "TECHQUIZ",
+    description: "Test your technical knowledge in this exciting quiz competition",
     rules: [
-      "Teams of 2 members",
-      "Multiple rounds of elimination",
-      "Topics include programming, networking, and technology trends",
-      "Rapid fire rounds included",
-      "Negative marking applicable"
+      "Team size: 2 members",
+      "Multiple rounds with increasing difficulty",
+      "Topics: Programming, Tech History, Current Affairs",
+      "Rapid fire round in finals",
+      "Decision of quiz master is final"
     ]
   },
   {
-    title: "THE SHERLOCK MATRIX",
-    icon: <Trophy className="text-primary" size={32} />,
-    description: "Solve mysteries and puzzles using your analytical and technical skills in this unique challenge.",
-    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
+    id: 5,
+    name: "THE SHERLOCK MATRIX",
+    description: "Solve complex technical mysteries and debugging challenges",
     rules: [
-      "Teams of 2-3 members",
-      "Multiple levels of challenges",
-      "Time-based scoring system",
-      "Clues and hints provided",
-      "Final mystery challenge"
+      "Individual or pair participation",
+      "Multiple stages of problem-solving",
+      "Time limit: 2 hours total",
+      "Focus on debugging and problem analysis",
+      "Extra points for optimal solutions"
     ]
   }
 ];
 
 const Events = () => {
-  const sectionRef = useRef<HTMLElement>(null);
-  const [selectedEvent, setSelectedEvent] = useState<typeof events[0] | null>(null);
-  const [isDialogOpen, setIsDialogOpen] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-          }
-        });
-      },
-      { threshold: 0.1, rootMargin: "50px" }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
-  const handleLearnMore = (event: typeof events[0]) => {
-    setSelectedEvent(event);
-    setIsDialogOpen(true);
-  };
+  const [selectedEvent, setSelectedEvent] = useState<(typeof events)[0] | null>(null);
 
   return (
-    <>
-      <section 
-        ref={sectionRef}
-        id="events" 
-        className="py-20 relative overflow-hidden"
-      >
-        <div className="absolute inset-0 bg-gradient-to-br from-background via-background/90 to-background" />
+    <section id="events" className="min-h-screen py-20 relative overflow-hidden">
+      <div className="container mx-auto px-4">
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 animate-fade-in">
+          Events
+        </h2>
         
-        <div className="container mx-auto px-6 relative z-10 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
-            Events
-          </h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {events.map((event, index) => (
-              <div
-                key={index}
-                className="group relative overflow-hidden rounded-xl bg-black/30 backdrop-blur-sm border border-white/10 hover:border-primary/50 transition-all duration-300 animate-fade-in"
-                style={{
-                  animationDelay: `${index * 100}ms`
-                }}
-              >
-                <div className="absolute inset-0">
-                  <img 
-                    src={event.image} 
-                    alt={event.title}
-                    className="w-full h-full object-cover opacity-40 group-hover:opacity-60 transition-opacity duration-300"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
-                </div>
-                
-                <div className="relative p-6 flex flex-col h-full min-h-[320px]">
-                  <div className="flex-1">
-                    <div className="mb-4 transform group-hover:scale-110 transition-transform duration-300">
-                      {event.icon}
-                    </div>
-                    <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-primary transition-colors duration-300">
-                      {event.title}
-                    </h3>
-                    <p className="text-gray-300 group-hover:text-white transition-colors duration-300">
-                      {event.description}
-                    </p>
-                  </div>
-                  
-                  <Button
-                    className="mt-6 w-full bg-white/10 hover:bg-primary/20 border border-white/20 hover:border-primary transition-all duration-300"
-                    onClick={() => handleLearnMore(event)}
-                  >
-                    Learn More
-                  </Button>
-                </div>
+        <Tabs defaultValue="tab1" className="w-full max-w-4xl mx-auto">
+          <TabsList className="grid w-full grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 bg-transparent h-auto p-4">
+            <TabsTrigger 
+              value="tab1"
+              className="data-[state=active]:bg-primary/20 data-[state=active]:text-primary relative overflow-hidden group"
+            >
+              <div className="absolute inset-0 opacity-20 group-hover:opacity-30 transition-opacity">
+                <img 
+                  src="/lovable-uploads/b3cae842-45e0-4322-8cc8-92e08e38231d.png" 
+                  alt="Tab background" 
+                  className="w-full h-full object-cover"
+                />
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
+              <span className="relative z-10">Technical</span>
+            </TabsTrigger>
+            <TabsTrigger 
+              value="tab2"
+              className="data-[state=active]:bg-primary/20 data-[state=active]:text-primary relative overflow-hidden group"
+            >
+              <div className="absolute inset-0 opacity-20 group-hover:opacity-30 transition-opacity">
+                <img 
+                  src="/lovable-uploads/b3cae842-45e0-4322-8cc8-92e08e38231d.png" 
+                  alt="Tab background" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <span className="relative z-10">Non-Technical</span>
+            </TabsTrigger>
+            <TabsTrigger 
+              value="tab3"
+              className="data-[state=active]:bg-primary/20 data-[state=active]:text-primary relative overflow-hidden group"
+            >
+              <div className="absolute inset-0 opacity-20 group-hover:opacity-30 transition-opacity">
+                <img 
+                  src="/lovable-uploads/b3cae842-45e0-4322-8cc8-92e08e38231d.png" 
+                  alt="Tab background" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <span className="relative z-10">Workshop</span>
+            </TabsTrigger>
+          </TabsList>
 
-      <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-        <DialogContent className="sm:max-w-[425px] bg-background/95 backdrop-blur-lg">
-          <DialogHeader>
-            <DialogTitle className="text-2xl font-bold flex items-center gap-3">
-              {selectedEvent?.icon}
-              {selectedEvent?.title}
-            </DialogTitle>
-            <DialogDescription>
-              {selectedEvent?.description}
-            </DialogDescription>
-          </DialogHeader>
-          <ScrollArea className="h-[300px] w-full rounded-md border p-4">
-            <div className="pr-4">
-              <h4 className="text-lg font-semibold mb-3 text-primary">Rules & Guidelines</h4>
-              <ul className="space-y-2">
-                {selectedEvent?.rules.map((rule, index) => (
-                  <li key={index} className="flex items-start gap-2">
-                    <span className="text-primary">•</span>
-                    <span>{rule}</span>
-                  </li>
-                ))}
-              </ul>
+          <TabsContent value="tab1" className="mt-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {events.map((event, index) => (
+                <div
+                  key={event.id}
+                  className="glass-effect p-6 rounded-xl cursor-pointer transform hover:scale-105 transition-all duration-300 animate-fade-in"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                  onClick={() => setSelectedEvent(event)}
+                >
+                  <h3 className="text-xl font-bold mb-3 text-primary">{event.name}</h3>
+                  <p className="text-gray-300">{event.description}</p>
+                </div>
+              ))}
             </div>
-          </ScrollArea>
-        </DialogContent>
-      </Dialog>
-    </>
+          </TabsContent>
+
+          <TabsContent value="tab2">
+            <div className="text-center text-gray-400 py-8">
+              Coming Soon...
+            </div>
+          </TabsContent>
+
+          <TabsContent value="tab3">
+            <div className="text-center text-gray-400 py-8">
+              Workshop details will be announced shortly.
+            </div>
+          </TabsContent>
+        </Tabs>
+
+        <Dialog open={!!selectedEvent} onOpenChange={() => setSelectedEvent(null)}>
+          <DialogContent className="max-w-2xl">
+            <DialogHeader>
+              <DialogTitle className="text-2xl font-bold text-primary mb-4">
+                {selectedEvent?.name}
+              </DialogTitle>
+            </DialogHeader>
+            <div className="mt-4">
+              <h4 className="text-lg font-semibold mb-2">Description:</h4>
+              <p className="text-gray-300 mb-4">{selectedEvent?.description}</p>
+              
+              <h4 className="text-lg font-semibold mb-2">Rules & Guidelines:</h4>
+              <ScrollArea className="h-[200px] rounded-md border p-4">
+                <ul className="list-disc pl-4 space-y-2">
+                  {selectedEvent?.rules.map((rule, index) => (
+                    <li key={index} className="text-gray-300">{rule}</li>
+                  ))}
+                </ul>
+              </ScrollArea>
+            </div>
+          </DialogContent>
+        </Dialog>
+      </div>
+    </section>
   );
 };
 

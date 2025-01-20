@@ -59,7 +59,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .animate-fade-in {
-  opacity: 0;
   animation: fadeIn 0.5s ease-out forwards;
 }
 
@@ -97,7 +96,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .countdown-item {
   @apply relative flex flex-col items-center justify-center w-20 h-20 md:w-24 md:h-24 bg-black/30 backdrop-blur-sm rounded-xl border border-violet-500/20;
-  animation: glow 2s ease-in-out infinite alternate;
+  animation: glow 2s ease-in-out infinite;
 }
 
 @keyframes glow {
@@ -111,35 +110,4 @@ h1, h2, h3, h4, h5, h6 {
                 0 0 20px theme('colors.violet.500/40'),
                 0 0 30px theme('colors.violet.500/40');
   }
-}
-
-@keyframes scroll-mouse {
-  0% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(15px);
-    opacity: 0;
-  }
-}
-
-.animate-scroll-mouse {
-  animation: scroll-mouse 1.5s infinite;
-}
-
-@keyframes fade-in {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-fade-in {
-  animation: fade-in 0.6s ease-out forwards;
-  will-change: transform, opacity;
 }
