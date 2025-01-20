@@ -10,8 +10,21 @@ import {
 
 const events = [
   {
-    title: "Code Combat",
-    icon: <Trophy className="text-primary" size={32} />,
+    title: "PAPER PRESENTATION",
+    icon: <FileText className="text-primary" size={32} />,
+    description: "Present your research papers and showcase your technical writing skills.",
+    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c",
+    rules: [
+      "Individual or team of 2",
+      "15 minutes presentation time",
+      "Original research work only",
+      "Abstract submission required",
+      "IEEE format mandatory"
+    ]
+  },
+  {
+    title: "DEV-DOMINATION",
+    icon: <Code className="text-primary" size={32} />,
     description: "Battle it out in our intense coding competition. Solve complex problems and showcase your programming prowess.",
     image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
     rules: [
@@ -23,20 +36,7 @@ const events = [
     ]
   },
   {
-    title: "Tech Quiz",
-    icon: <Star className="text-primary" size={32} />,
-    description: "Test your technical knowledge across various domains in this fast-paced quiz competition.",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475",
-    rules: [
-      "Teams of 2 members",
-      "Multiple rounds of elimination",
-      "Topics include programming, networking, and technology trends",
-      "Rapid fire rounds included",
-      "Negative marking applicable"
-    ]
-  },
-  {
-    title: "Project Expo",
+    title: "TRAILBLAZERS",
     icon: <Award className="text-primary" size={32} />,
     description: "Present your innovative projects and get feedback from industry experts.",
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
@@ -49,29 +49,29 @@ const events = [
     ]
   },
   {
-    title: "Hackathon",
-    icon: <Code className="text-primary" size={32} />,
-    description: "24-hour coding marathon to build solutions for real-world problems.",
-    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
+    title: "TECHQUIZ",
+    icon: <Star className="text-primary" size={32} />,
+    description: "Test your technical knowledge across various domains in this fast-paced quiz competition.",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475",
     rules: [
-      "24-hour duration",
-      "Team size: 3-4 members",
-      "Problem statements provided on spot",
-      "Regular mentorship sessions",
-      "Final presentation to judges"
+      "Teams of 2 members",
+      "Multiple rounds of elimination",
+      "Topics include programming, networking, and technology trends",
+      "Rapid fire rounds included",
+      "Negative marking applicable"
     ]
   },
   {
-    title: "Paper Presentation",
-    icon: <FileText className="text-primary" size={32} />,
-    description: "Present your research papers and showcase your technical writing skills.",
-    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c",
+    title: "THE SHERLOCK MATRIX",
+    icon: <Trophy className="text-primary" size={32} />,
+    description: "Solve mysteries and puzzles using your analytical and technical skills in this unique challenge.",
+    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
     rules: [
-      "Individual or team of 2",
-      "15 minutes presentation time",
-      "Original research work only",
-      "Abstract submission required",
-      "IEEE format mandatory"
+      "Teams of 2-3 members",
+      "Multiple levels of challenges",
+      "Time-based scoring system",
+      "Clues and hints provided",
+      "Final mystery challenge"
     ]
   }
 ];
