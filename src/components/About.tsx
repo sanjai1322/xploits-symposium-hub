@@ -39,11 +39,27 @@ const About = () => {
                 <Building className="text-primary mr-4" size={32} />
                 <h3 className="text-2xl font-bold text-primary group-hover:text-secondary transition-colors">About College</h3>
               </div>
-              <p className="text-gray-300 group-hover:text-white transition-colors">
-                Our institution stands as a beacon of technical excellence, fostering innovation and 
-                nurturing future tech leaders. With state-of-the-art facilities and expert faculty, 
-                we provide the perfect platform for students to excel in their chosen fields.
-              </p>
+              <div className="space-y-4 text-gray-300 group-hover:text-white transition-colors">
+                <p>
+                  SRM Valliammai Engineering college (An Autonomous Institution) was established on September 9, 1999 
+                  and presently conducts 11 Under graduate courses and 8 Post graduate courses. The college has highly 
+                  qualified, dynamic and dedicated renowned faculty both from academic and industrial background. Besides, 
+                  the students bring laurels to the college by securing university ranks.
+                </p>
+                <p>
+                  The SRM Valliammai Engineering College is a part of the SRM Group of Educational Institutions, sponsored 
+                  by the Valliammai Society. The Valliammai Society was founded by Dr.T.R.Paarivendhar, a well-known 
+                  educationist, in the name of his mother Tmt.R.Valliammai, under whose care and guidance he attained 
+                  greater heights in his personal development and whose ideals continue to inspire him. It is approved by 
+                  AICTE, New Delhi, Accredited by NBA, A 'Grade Accreditation by NAAC, ISO certified and affiliated to 
+                  Anna University, Chennai.
+                </p>
+                <p>
+                  Our Institute is recognized as SIRO by DST and has been granted by 2(f) & 12(b) status by UGC and also 
+                  centrally funded by FIST of DST and Incubation Centre by MSME, Govt. of India. The objective of the 
+                  institution is to promote the development and growth of true, effective and efficient Engineering Professional.
+                </p>
+              </div>
             </div>
           </div>
           
