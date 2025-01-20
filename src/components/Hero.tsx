@@ -38,7 +38,7 @@ const Hero = () => {
       <div className="container mx-auto px-6 relative z-10 flex flex-col items-center justify-center min-h-[calc(120vh-96px)] text-center">
         <div className="mb-8">
           <img 
-            src="public/img uploads/e7be3152-f7d6-4327-8a4b-7767aeebf22e.png" 
+            src="/public/img uploads/e7be3152-f7d6-4327-8a4b-7767aeebf22e.png" 
             alt="Xploits Logo" 
             className="w-32 h-32 md:w-48 md:h-48 object-contain animate-float"
           />
