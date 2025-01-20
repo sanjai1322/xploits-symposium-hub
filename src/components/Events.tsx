@@ -30,11 +30,12 @@ const events = [
     description: "Battle it out in our intense coding competition. Solve complex problems and showcase your programming prowess.",
     image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
     rules: [
-      "Time limit of 3 hours",
-      "Individual participation only",
-      "Multiple programming languages supported",
-      "Automated testing system",
-      "Points based on code efficiency and correctness"
+      "ROUND 1 : Live monitoring; no external help or devices.",
+      "Use only the quiz platform; 45 mins max.",
+      "Report issues; violations = disqualification.",
+      "Round 2 : No AI tools; internet only for images and colors.",
+      "Live monitoring; misuse = disqualification.",
+      "Finish website within the time limit."
     ]
   },
   {
@@ -43,11 +44,15 @@ const events = [
     description: "Present your innovative projects and get feedback from industry experts.",
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
     rules: [
-      "Team size: 2-4 members",
-      "Project must be original work",
-      "Live demonstration required",
-      "10 minutes presentation time",
-      "Q&A session with judges"
+      "Each team consists of 2 members.",
+      "A buzzer app is used to signal readiness to answer a question.",
+      "Questions will be displayed with marks based on difficulty:",
+      "Round 1: 1-mark (easy) and 2-mark (moderate) questions.",
+      "Round 2: 3-mark (difficult) and 5-mark (very difficult) questions.",
+      "Teams move forward on the 25-box board based on the marks of the questions they answer correctly:",
+     " 1 mark = 1 box forward.",
+      "2 marks = 2 boxes forward, and so on.",
+      "Incorrect answers result in no movement.The team that crosses the 25th box first will be declared the winner."
     ]
   },
   {
@@ -56,11 +61,13 @@ const events = [
     description: "Test your technical knowledge across various domains in this fast-paced quiz competition.",
     image: "https://images.unsplash.com/photo-1518770660439-4636190af475",
     rules: [
-      "Teams of 2 members",
-      "Multiple rounds of elimination",
-      "Topics include programming, networking, and technology trends",
-      "Rapid fire rounds included",
-      "Negative marking applicable"
+      "The test will be monitored live by invigilators present in the classroom to ensure fair play.",
+        "Accessing any external websites, tabs, or applications apart from the quiz platform is strictly prohibited.",
+        "Participants are not allowed to use mobile phones, smartwatches, or any electronic devices during the test.",
+        "The test duration is 30 minutes(based on participation duration can change). Ensure you manage your time effectively as no extra time will be provided.",
+        "Any attempt to seek external help, communicate with other participants, or violate the rules will result in immediate disqualification.",
+        "In case of any technical issues, report them immediately to the invigilator.",
+        "Failure to comply with these rules will lead to disqualification. Stay focused and showcase your knowledge!"
     ]
   },
   {
@@ -69,11 +76,23 @@ const events = [
     description: "Solve mysteries and puzzles using your analytical and technical skills in this unique challenge.",
     image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
     rules: [
-      "Teams of 2-3 members",
-      "Multiple levels of challenges",
-      "Time-based scoring system",
-      "Clues and hints provided",
-      "Final mystery challenge"
+      
+
+      "We will setup a crime scene in a room and document  will be provided before entering the scene.",
+
+      "Kindly bring a notebook and a pen.",
+
+      "Each team can consist of 2 - 3 members only.",
+
+      "This event has a total of 2 rounds, participants shortlisted from the first round will be moved to the second round.",
+
+      "The team is allowed to view the crime location for a particular time and you can have note of it.",
+
+      "The first round is questionnaire about the crime scene and the second round is the justification round.",
+
+      "No product should be touched or damaged, it will lead to disqualification.",
+
+      "The most accurate answering team will be the winner."
     ]
   }
 ];

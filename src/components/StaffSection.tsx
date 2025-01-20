@@ -3,48 +3,50 @@ import { Card, CardContent } from "./ui/card";
 
 const leadershipMembers = [
   {
-    name: "Arun Kumar",
-    role: "Technical Lead",
-    image: "/lovable-uploads/3e409326-6d39-4320-aadb-e4de7ff1ac59.png"
+    name: "R.Layanya",
+    role: "President",
+    image: "public/img uploads/9ddf7ebd-3313-492f-b639-6b67b097c5e6.png",
   },
   {
-    name: "Priya Sharma",
-    role: "Event Coordinator",
-    image: "/lovable-uploads/cfb30667-9eb9-48a0-8354-dd14b2997609.png"
+    name: "R. Mukesh Raaj",
+    role: "Vice-President",
+    image: "public/img uploads/WhatsApp Image 2025-01-20 at 09.50.53_cb3de241.jpg",
   },
   {
-    name: "Rahul Dev",
-    role: "Creative Director",
-    image: "/lovable-uploads/57d4118b-e509-49d9-be31-a59cff58f272.png"
+    name: "V.Vignesh",
+    role: "Secretary",
+    image: "public/img uploads/0b6883e0-1b56-4e13-9d69-4edfaa77b119.png",
   },
   {
-    name: "Lakshmi Priya",
-    role: "Operations Head",
-    image: "/lovable-uploads/3982e581-1a86-4c80-a92e-f61a2c46a49f.png"
+    name: "R.Karthi",
+    role: "Joint Secretary",
+    image: "public/img uploads/4a9fd3b3-4446-4439-aa46-b2e2a9b8b6ba.png",
   },
   {
-    name: "Vikram Singh",
-    role: "Marketing Lead",
-    image: "/lovable-uploads/3fe05ba9-4ba7-4e4a-82b1-d4d158470107.png"
-  }
+    name: "M.Vannamathi",
+    role: "Treasurer",
+    image: "public/img uploads/3982e581-1a86-4c80-a92e-f61a2c46a49f.png",
+  },
 ];
 
 const staffMembers = [
   {
-    name: "James Anderson",
-    role: "Event Coordinator",
-    image: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=400&h=600&fit=crop"
+    name: "Dr.S.Narayanan",
+    role: "HOD-Department of Information Technology",
+    image: "public/img uploads/57d4118b-e509-49d9-be31-a59cff58f272.png",
   },
   {
-    name: "Lisa Chen",
-    role: "Technical Lead",
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=600&fit=crop"
+    name: "Dr.S.Suresh Kumar",
+    role: "Assistant Professor (sr.G)",
+    image:
+      "public/img uploads/3e409326-6d39-4320-aadb-e4de7ff1ac59.png",
   },
   {
-    name: "Mark Thompson",
-    role: "Operations Manager",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=600&fit=crop"
-  }
+    name: "Ms.D.Nisha",
+    role: "Assistant Professor (Sr.G)",
+    image:
+      "public/img uploads/cfb30667-9eb9-48a0-8354-dd14b2997609.png",
+  },
 ];
 
 const StaffSection = () => {
@@ -58,10 +60,10 @@ const StaffSection = () => {
           }
         });
       },
-      { 
+      {
         threshold: 0.1,
-        rootMargin: '50px'
-      }
+        rootMargin: "50px",
+      },
     );
 
     document.querySelectorAll(".staff-card").forEach((card) => {
@@ -76,11 +78,14 @@ const StaffSection = () => {
       <section id="leadership" className="py-20 relative overflow-hidden">
         <div className="container mx-auto px-6">
           <h2 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
-            Our Leadership
+            Team
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
             {leadershipMembers.map((member, index) => (
-              <Card key={index} className="staff-card opacity-0 bg-background/20 backdrop-blur-sm border-primary/20 hover:border-primary/50 transition-all duration-300 group">
+              <Card
+                key={index}
+                className="staff-card opacity-0 bg-background/20 backdrop-blur-sm border-primary/20 hover:border-primary/50 transition-all duration-300 group"
+              >
                 <CardContent className="p-6">
                   <div className="relative w-full aspect-[3/4] mx-auto mb-4 rounded-xl overflow-hidden group-hover:scale-105 transition-transform duration-300">
                     <img
@@ -90,7 +95,9 @@ const StaffSection = () => {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
-                  <h3 className="text-xl font-semibold text-center mb-2 group-hover:text-primary transition-colors">{member.name}</h3>
+                  <h3 className="text-xl font-semibold text-center mb-2 group-hover:text-primary transition-colors">
+                    {member.name}
+                  </h3>
                   <p className="text-gray-400 text-center">{member.role}</p>
                 </CardContent>
               </Card>
@@ -99,14 +106,20 @@ const StaffSection = () => {
         </div>
       </section>
 
-      <section id="staff" className="py-20 relative overflow-hidden bg-background/50">
+      <section
+        id="staff"
+        className="py-20 relative overflow-hidden bg-background/50"
+      >
         <div className="container mx-auto px-6">
           <h2 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
-            Our Staff
+            Special Thanks
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {staffMembers.map((member, index) => (
-              <Card key={index} className="staff-card opacity-0 bg-background/20 backdrop-blur-sm border-primary/20 hover:border-primary/50 transition-all duration-300 group">
+              <Card
+                key={index}
+                className="staff-card opacity-0 bg-background/20 backdrop-blur-sm border-primary/20 hover:border-primary/50 transition-all duration-300 group"
+              >
                 <CardContent className="p-6">
                   <div className="relative w-full aspect-[3/4] mx-auto mb-4 rounded-xl overflow-hidden group-hover:scale-105 transition-transform duration-300">
                     <img
@@ -116,7 +129,9 @@ const StaffSection = () => {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
-                  <h3 className="text-xl font-semibold text-center mb-2 group-hover:text-primary transition-colors">{member.name}</h3>
+                  <h3 className="text-xl font-semibold text-center mb-2 group-hover:text-primary transition-colors">
+                    {member.name}
+                  </h3>
                   <p className="text-gray-400 text-center">{member.role}</p>
                 </CardContent>
               </Card>

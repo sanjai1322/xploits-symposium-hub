@@ -26,12 +26,12 @@ const About = () => {
   return (
     <section id="about" className="py-20 relative overflow-hidden smooth-scroll-section" ref={sectionRef}>
       <div className="absolute inset-0 bg-gradient-to-br from-background via-background/90 to-background" />
-      
+
       <div className="container mx-auto px-6 relative z-10">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent animate-gradient">
           About The Symposium
         </h2>
-        
+
         <div className="grid md:grid-cols-2 gap-12">
           <div className="group">
             <div className="bg-secondary/10 p-8 rounded-2xl border border-primary/20 group-hover:border-primary/40 transition-all duration-300 transform hover:scale-105">
@@ -62,7 +62,7 @@ const About = () => {
               </div>
             </div>
           </div>
-          
+
           <div className="group">
             <div className="bg-primary/10 p-8 rounded-2xl border border-secondary/20 group-hover:border-secondary/40 transition-all duration-300 transform hover:scale-105">
               <div className="flex items-center mb-6">

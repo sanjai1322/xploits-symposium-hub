@@ -19,7 +19,7 @@ export default {
     },
     extend: {
       backgroundImage: {
-        'hero-pattern': "url('/lovable-uploads/9e17c752-e73b-4189-be7a-0625d03b7f38.png')",
+        'hero-pattern': "url('public/img uploads/c2e8bfa3-d560-4120-af73-9f0cf5ebf157.png')",
       },
       colors: {
         border: "hsl(var(--border))",
