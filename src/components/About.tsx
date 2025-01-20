@@ -53,11 +53,28 @@ const About = () => {
                 <Code className="text-secondary mr-4" size={32} />
                 <h3 className="text-2xl font-bold text-secondary">About Department</h3>
               </div>
-              <p className="text-gray-300 group-hover:text-white transition-colors">
-                The Department of Technology has been at the forefront of technical education, 
-                consistently producing industry-ready professionals. Our focus on practical learning 
-                and research has established us as a leading department in the region.
-              </p>
+              <div className="space-y-4 text-gray-300 group-hover:text-white transition-colors">
+                <p>
+                  The Department has flourished with XploITs - Explore in IT – a student's forum in the year 2004 
+                  is a platform for the students to enrich their administrative skills and to exhibit their talents 
+                  by the way of organizing events like symposia, seminar, workshop and conferences, etc.
+                </p>
+                <p>
+                  The Department strives to develop long Term relationships with Industries and market the Student's 
+                  Talents effectively. The students are thus being provided high level 'Leads and Pathways' that will 
+                  enable them to gain access to a broad range of 'High Potential' and 'Hi-Tech' Career Opportunities.
+                </p>
+                <p>
+                  Six numbers of well-equipped Hi-tech laboratories with 217 high end machines with internet connection, 
+                  Centre of excellence for Graphic and Multimedia and Cyber safety and digital forensics in addition with 
+                  3D printing, Well-structured class rooms and laboratories are provided to the students to carry out the experiments.
+                </p>
+                <p>
+                  The department has increased the intake of the student's strength to 120 in the year 2008. A highly 
+                  qualified team of 14 Faculty members including 5 Doctorates and the Research Expertise in the areas of 
+                  specialization are disseminated in the department to guide the students to excel in their academic.
+                </p>
+              </div>
             </div>
           </div>
         </div>
