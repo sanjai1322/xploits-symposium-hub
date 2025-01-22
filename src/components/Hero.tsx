@@ -36,9 +36,17 @@ const Hero = () => {
     >
       <div className="absolute inset-0 bg-black/60 backdrop-blur-[2px]" />
       <div className="container mx-auto px-6 relative z-10 flex flex-col items-center justify-center min-h-[calc(120vh-96px)] text-center">
+        <div className="w-full max-w-[90%] md:max-w-[80%] lg:max-w-[70%] mb-12">
+          <img 
+            src="/lovable-uploads/7352be3a-1f54-4652-b0c2-d14468fd7f26.png" 
+            alt="SRM Valliammai Engineering College"
+            className="w-full h-auto object-contain"
+          />
+        </div>
+        
         <div className="mb-8">
           <img 
-            src="/public/img uploads/e7be3152-f7d6-4327-8a4b-7767aeebf22e.png" 
+            src="/img uploads/e7be3152-f7d6-4327-8a4b-7767aeebf22e.png" 
             alt="Xploits Logo" 
             className="w-32 h-32 md:w-48 md:h-48 object-contain animate-float"
           />
