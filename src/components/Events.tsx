@@ -9,13 +9,14 @@ import {
   DialogDescription,
 } from "./ui/dialog";
 import { ScrollArea } from "./ui/scroll-area";
+import { Card } from "./ui/card";
 
 const events = [
   {
     title: "PAPER PRESENTATION",
     icon: <FileText className="text-primary" size={32} />,
     description: "Present your research papers and showcase your technical writing skills.",
-    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c",
+    image: "/img uploads/3982e581-1a86-4c80-a92e-f61a2c46a49f.png",
     rules: [
       "Individual or team of 2",
       "15 minutes presentation time",
@@ -28,7 +29,7 @@ const events = [
     title: "DEV-DOMINATION",
     icon: <Code className="text-primary" size={32} />,
     description: "Battle it out in our intense coding competition. Solve complex problems and showcase your programming prowess.",
-    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
+    image: "/img uploads/3e409326-6d39-4320-aadb-e4de7ff1ac59.png",
     rules: [
       "ROUND 1 : Live monitoring; no external help or devices.",
       "Use only the quiz platform; 45 mins max.",
@@ -42,7 +43,7 @@ const events = [
     title: "TRAILBLAZERS",
     icon: <Award className="text-primary" size={32} />,
     description: "Present your innovative projects and get feedback from industry experts.",
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
+    image: "/img uploads/4a9fd3b3-4446-4439-aa46-b2e2a9b8b6ba.png",
     rules: [
       "Each team consists of 2 members.",
       "A buzzer app is used to signal readiness to answer a question.",
@@ -50,7 +51,7 @@ const events = [
       "Round 1: 1-mark (easy) and 2-mark (moderate) questions.",
       "Round 2: 3-mark (difficult) and 5-mark (very difficult) questions.",
       "Teams move forward on the 25-box board based on the marks of the questions they answer correctly:",
-     " 1 mark = 1 box forward.",
+      " 1 mark = 1 box forward.",
       "2 marks = 2 boxes forward, and so on.",
       "Incorrect answers result in no movement.The team that crosses the 25th box first will be declared the winner."
     ]
@@ -59,42 +60,45 @@ const events = [
     title: "TECHQUIZ",
     icon: <Star className="text-primary" size={32} />,
     description: "Test your technical knowledge across various domains in this fast-paced quiz competition.",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475",
+    image: "/img uploads/57d4118b-e509-49d9-be31-a59cff58f272.png",
     rules: [
       "The test will be monitored live by invigilators present in the classroom to ensure fair play.",
-        "Accessing any external websites, tabs, or applications apart from the quiz platform is strictly prohibited.",
-        "Participants are not allowed to use mobile phones, smartwatches, or any electronic devices during the test.",
-        "The test duration is 30 minutes(based on participation duration can change). Ensure you manage your time effectively as no extra time will be provided.",
-        "Any attempt to seek external help, communicate with other participants, or violate the rules will result in immediate disqualification.",
-        "In case of any technical issues, report them immediately to the invigilator.",
-        "Failure to comply with these rules will lead to disqualification. Stay focused and showcase your knowledge!"
+      "Accessing any external websites, tabs, or applications apart from the quiz platform is strictly prohibited.",
+      "Participants are not allowed to use mobile phones, smartwatches, or any electronic devices during the test.",
+      "The test duration is 30 minutes(based on participation duration can change). Ensure you manage your time effectively as no extra time will be provided.",
+      "Any attempt to seek external help, communicate with other participants, or violate the rules will result in immediate disqualification.",
+      "In case of any technical issues, report them immediately to the invigilator.",
+      "Failure to comply with these rules will lead to disqualification. Stay focused and showcase your knowledge!"
     ]
   },
   {
     title: "THE SHERLOCK MATRIX",
     icon: <Trophy className="text-primary" size={32} />,
     description: "Solve mysteries and puzzles using your analytical and technical skills in this unique challenge.",
-    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
+    image: "/img uploads/9ddf7ebd-3313-492f-b639-6b67b097c5e6.png",
     rules: [
-      
-
-      "We will setup a crime scene in a room and document  will be provided before entering the scene.",
-
+      "We will setup a crime scene in a room and document will be provided before entering the scene.",
       "Kindly bring a notebook and a pen.",
-
       "Each team can consist of 2 - 3 members only.",
-
       "This event has a total of 2 rounds, participants shortlisted from the first round will be moved to the second round.",
-
       "The team is allowed to view the crime location for a particular time and you can have note of it.",
-
       "The first round is questionnaire about the crime scene and the second round is the justification round.",
-
       "No product should be touched or damaged, it will lead to disqualification.",
-
       "The most accurate answering team will be the winner."
     ]
   }
+];
+
+const generalInstructions = [
+  "The symposium will begin at 9:00 am and conclude at 4:00 pm.",
+  "On spot registration will start at 8:30 and close at 11:00.",
+  "Registration fee should be paid at the venue.",
+  "Payment will only be accepted through cash.",
+  "Each participant should pay Rs.150 and can participate up to three events.",
+  "All the events will be conducted parallelly.",
+  "Lunch break will be issued after the end of round 1.",
+  "Refreshments and lunch will be provided.",
+  "Winners and Runners will be awarded with certificates and cash prizes."
 ];
 
 const Events = () => {
@@ -139,6 +143,26 @@ const Events = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
             Events
           </h2>
+
+          {/* General Instructions Card */}
+          <Card className="mb-16 p-6 bg-black/30 backdrop-blur-sm border border-white/10 hover:border-primary/50 transition-all duration-300 group">
+            <h3 className="text-2xl font-bold mb-4 text-primary">General Instructions</h3>
+            <ScrollArea className="h-[200px] w-full rounded-md">
+              <ul className="space-y-2 pr-4">
+                {generalInstructions.map((instruction, index) => (
+                  <li 
+                    key={index}
+                    className="flex items-start gap-2 group-hover:translate-x-2 transition-transform duration-300"
+                  >
+                    <span className="text-primary">•</span>
+                    <span className="text-gray-300 group-hover:text-white transition-colors duration-300">
+                      {instruction}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </ScrollArea>
+          </Card>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {events.map((event, index) => (

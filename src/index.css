@@ -143,3 +143,19 @@ h1, h2, h3, h4, h5, h6 {
   animation: fade-in 0.6s ease-out forwards;
   will-change: transform, opacity;
 }
+
+.group-hover-slide {
+  transition: transform 0.3s ease-out;
+}
+
+.group:hover .group-hover-slide {
+  transform: translateX(0.5rem);
+}
+
+.hover-glow {
+  transition: box-shadow 0.3s ease-out;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 15px theme('colors.primary.500');
+}
