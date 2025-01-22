@@ -1,5 +1,6 @@
-import { Building, Code } from "lucide-react";
+import { Building, Code, ScrollText } from "lucide-react";
 import { useEffect, useRef } from "react";
+import { ScrollArea } from "./ui/scroll-area";
 
 const About = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -31,6 +32,29 @@ const About = () => {
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent animate-gradient">
           About The Symposium
         </h2>
+
+        {/* General Instructions Box */}
+        <div className="mb-16 hover-scale">
+          <div className="bg-secondary/10 p-8 rounded-2xl border border-primary/20 hover:border-primary/40 transition-all duration-300">
+            <div className="flex items-center mb-6">
+              <ScrollText className="text-primary mr-4" size={32} />
+              <h3 className="text-2xl font-bold text-primary">General Instructions</h3>
+            </div>
+            <ScrollArea className="h-[300px] w-full pr-4">
+              <div className="space-y-4 text-gray-300">
+                <p>1. The symposium will begin at 9:00 am and conclude at 4:00 pm.</p>
+                <p>2. On spot registration will start at 8:30 and close at 11:00.</p>
+                <p>3. Registration fee should be paid at the venue.</p>
+                <p>4. Payment will only be accepted through cash.</p>
+                <p>5. Each participant should pay Rs.150 and can participate up to three events.</p>
+                <p>6. All the events will be conducted parallelly.</p>
+                <p>7. Lunch break will be issued after the end of round 1.</p>
+                <p>8. Refreshments and lunch will be provided.</p>
+                <p>9. Winners and Runners will be awarded with certificates and cash prizes.</p>
+              </div>
+            </ScrollArea>
+          </div>
+        </div>
 
         <div className="grid md:grid-cols-2 gap-12">
           <div className="group">
