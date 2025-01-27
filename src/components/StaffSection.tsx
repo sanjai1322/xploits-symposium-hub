@@ -45,7 +45,7 @@ const staffMembers = [
     name: "Ms.D.Nisha",
     role: "Assistant Professor (Sr.G)",
     image:
-      "public/img uploads/nisha.jpg",
+      "https://drive.google.com/file/d/1TOwF0H3Klq_ygVJCXxgmBqAxRhyo5JGb/view?usp=drive_link",
   },
 ];
 
