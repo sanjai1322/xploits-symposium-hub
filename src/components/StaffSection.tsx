@@ -45,7 +45,7 @@ const staffMembers = [
     name: "Ms.D.Nisha",
     role: "Assistant Professor (Sr.G)",
     image:
-      "https://github.com/sanjai1322/xploits-symposium-hub/blob/bfbbc656f97ac9f0ed46b83c42052d52c284ab49/public/img%20uploads/nisha.jpg",
+      "public/img uploads/nisha.jpg",
   },
 ];
 
