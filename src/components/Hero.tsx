@@ -38,7 +38,7 @@ const Hero = () => {
       <div className="container mx-auto px-6 relative z-10 flex flex-col items-center justify-center min-h-[calc(120vh-96px)] text-center">
         <div className="w-full max-w-[90%] md:max-w-[80%] lg:max-w-[70%] mb-12">
           <img 
-            src="/lovable-uploads/7352be3a-1f54-4652-b0c2-d14468fd7f26.png"
+            src="https://github.com/sanjai1322/xploits-symposium-hub/blob/f2a6b501fd6e0eec241ac6880bcee61d6e47136d/public/img%20uploads/hero%20header.png"
             alt="SRM Valliammai Engineering College"
             className="w-full h-auto object-contain"
           />
@@ -46,7 +46,7 @@ const Hero = () => {
         
         <div className="mb-8">
           <img 
-            src="/img uploads/e7be3152-f7d6-4327-8a4b-7767aeebf22e.png"
+            src="https://github.com/sanjai1322/xploits-symposium-hub/blob/f2a6b501fd6e0eec241ac6880bcee61d6e47136d/public/img%20uploads/retouch_2025012208530376.png"
             alt="Xploits Logo" 
             className="w-32 h-32 md:w-48 md:h-48 object-contain animate-float"
           />
