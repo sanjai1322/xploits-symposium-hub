@@ -30,12 +30,12 @@ const Header = () => {
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-4">
             <img 
-              src="https://github.com/sanjai1322/xploits-symposium-hub/blob/f2a6b501fd6e0eec241ac6880bcee61d6e47136d/public/img%20uploads/retouch_2025012208530376.png" 
+              src="/public/img uploads/e7be3152-f7d6-4327-8a4b-7767aeebf22e.png" 
               alt="Xploits Logo" 
               className="w-8 h-8 md:w-10 md:h-10 object-contain"
             />
             <span className="text-xl md:text-2xl font-bold bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
-             
+              XPLOITS
             </span>
           </div>
           

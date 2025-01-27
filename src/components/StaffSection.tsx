@@ -5,27 +5,27 @@ const leadershipMembers = [
   {
     name: "R.Layanya",
     role: "President",
-    image: "https://github.com/sanjai1322/xploits-symposium-hub/blob/bfbbc656f97ac9f0ed46b83c42052d52c284ab49/public/img%20uploads/Layanya.jpg",
+    image: "/public/img uploads/9ddf7ebd-3313-492f-b639-6b67b097c5e6.png",
   },
   {
     name: "R. Mukesh Raaj",
     role: "Vice-President",
-    image: "https://unsplash.com/photos/zNUA3uru5rU",
+    image: "/public/img uploads/WhatsApp Image 2025-01-20 at 09.50.53_cb3de241.jpg",
   },
   {
     name: "V.Vignesh",
     role: "Secretary",
-    image: "https://github.com/sanjai1322/xploits-symposium-hub/blob/bfbbc656f97ac9f0ed46b83c42052d52c284ab49/public/img%20uploads/Vignsh.jpg",
+    image: "/public/img uploads/0b6883e0-1b56-4e13-9d69-4edfaa77b119.png",
   },
   {
     name: "R.Karthi",
     role: "Joint Secretary",
-    image: "https://github.com/sanjai1322/xploits-symposium-hub/blob/bfbbc656f97ac9f0ed46b83c42052d52c284ab49/public/img%20uploads/karthi.jpg",
+    image: "/public/img uploads/4a9fd3b3-4446-4439-aa46-b2e2a9b8b6ba.png",
   },
   {
     name: "M.Vannamathi",
     role: "Treasurer",
-    image: "https://github.com/sanjai1322/xploits-symposium-hub/blob/bfbbc656f97ac9f0ed46b83c42052d52c284ab49/public/img%20uploads/Vannamathi.jpg",
+    image: "/public/img uploads/3982e581-1a86-4c80-a92e-f61a2c46a49f.png",
   },
 ];
 
@@ -33,19 +33,19 @@ const staffMembers = [
   {
     name: "Dr.S.Narayanan",
     role: "HOD-Department of Information Technology",
-    image: "https://github.com/sanjai1322/xploits-symposium-hub/blob/bfbbc656f97ac9f0ed46b83c42052d52c284ab49/public/img%20uploads/narayanan_sir.jpg",
+    image: "/public/img uploads/57d4118b-e509-49d9-be31-a59cff58f272.png",
   },
   {
     name: "Dr.S.Suresh Kumar",
     role: "Assistant Professor (sr.G)",
     image:
-      "https://github.com/sanjai1322/xploits-symposium-hub/blob/bfbbc656f97ac9f0ed46b83c42052d52c284ab49/public/img%20uploads/Suresh.jpg",
+      "/public/img uploads/3e409326-6d39-4320-aadb-e4de7ff1ac59.png",
   },
   {
     name: "Ms.D.Nisha",
     role: "Assistant Professor (Sr.G)",
     image:
-      "https://drive.google.com/file/d/1TOwF0H3Klq_ygVJCXxgmBqAxRhyo5JGb/view?usp=drive_link",
+      "/public/img uploads/cfb30667-9eb9-48a0-8354-dd14b2997609.png",
   },
 ];
 
