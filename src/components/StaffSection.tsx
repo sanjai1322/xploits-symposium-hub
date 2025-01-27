@@ -10,7 +10,7 @@ const leadershipMembers = [
   {
     name: "R. Mukesh Raaj",
     role: "Vice-President",
-    image: "https://github.com/sanjai1322/xploits-symposium-hub/blob/bfbbc656f97ac9f0ed46b83c42052d52c284ab49/public/img%20uploads/Mukesh.jpg",
+    image: "https://unsplash.com/photos/zNUA3uru5rU",
   },
   {
     name: "V.Vignesh",
