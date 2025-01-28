@@ -15,17 +15,17 @@ const leadershipMembers = [
   {
     name: "V.Vignesh",
     role: "Secretary",
-    image: "public/img uploads/0b6883e0-1b56-4e13-9d69-4edfaa77b119.png",
+    image: "./img uploads/0b6883e0-1b56-4e13-9d69-4edfaa77b119.png",
   },
   {
     name: "R.Karthi",
     role: "Joint Secretary",
-    image: "public/lovable-uploads/4a9fd3b3-4446-4439-aa46-b2e2a9b8b6ba.png",
+    image: "./img uploads/4a9fd3b3-4446-4439-aa46-b2e2a9b8b6ba.png",
   },
   {
     name: "M.Vannamathi",
     role: "Treasurer",
-    image: "public/lovable-uploads/3982e581-1a86-4c80-a92e-f61a2c46a49f.png",
+    image: "./img uploads/3982e581-1a86-4c80-a92e-f61a2c46a49f.png",
   },
 ];
 
@@ -39,13 +39,13 @@ const staffMembers = [
     name: "Dr.S.Suresh Kumar",
     role: "Assistant Professor (sr.G)",
     image:
-      "public/lovable-uploads/3e409326-6d39-4320-aadb-e4de7ff1ac59.png",
+      "./img uploads3e409326-6d39-4320-aadb-e4de7ff1ac59.png",
   },
   {
     name: "Ms.D.Nisha",
     role: "Assistant Professor (Sr.G)",
     image:
-      "public/lovable-uploads/cfb30667-9eb9-48a0-8354-dd14b2997609.png",
+      "./img uploadscfb30667-9eb9-48a0-8354-dd14b2997609.png",
   },
 ];
 
