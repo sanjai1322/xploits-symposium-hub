@@ -46,7 +46,7 @@ const Hero = () => {
         
         <div className="mb-8">
           <img 
-            src="/img uploads/e7be3152-f7d6-4327-8a4b-7767aeebf22e.png" 
+            src="./img uploads/retouch_2025012208530376.png" 
             alt="Xploits Logo" 
             className="w-32 h-32 md:w-48 md:h-48 object-contain animate-float"
           />
