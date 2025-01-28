@@ -10,7 +10,7 @@ const leadershipMembers = [
   {
     name: "R. Mukesh Raaj",
     role: "Vice-President",
-    image: "public/lovable-uploads/IMG_4666.jpg",
+    image: "",
   },
   {
     name: "V.Vignesh",
@@ -33,19 +33,19 @@ const staffMembers = [
   {
     name: "Dr.S.Narayanan",
     role: "HOD-Department of Information Technology",
-    image: "public/lovable-uploads/57d4118b-e509-49d9-be31-a59cff58f272.png",
+    image: "./img uploads/57d4118b-e509-49d9-be31-a59cff58f272.png",
   },
   {
     name: "Dr.S.Suresh Kumar",
     role: "Assistant Professor (sr.G)",
     image:
-      "./img uploads3e409326-6d39-4320-aadb-e4de7ff1ac59.png",
+      "./img uploads/3e409326-6d39-4320-aadb-e4de7ff1ac59.png",
   },
   {
     name: "Ms.D.Nisha",
     role: "Assistant Professor (Sr.G)",
     image:
-      "./img uploadscfb30667-9eb9-48a0-8354-dd14b2997609.png",
+      "./img uploads/cfb30667-9eb9-48a0-8354-dd14b2997609.png",
   },
 ];
 
