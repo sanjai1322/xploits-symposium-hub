@@ -5,7 +5,7 @@ const leadershipMembers = [
   {
     name: "R.Layanya",
     role: "President",
-    image: "public/lovable-uploads/9ddf7ebd-3313-492f-b639-6b67b097c5e6.png",
+    image: "./img uploads/9ddf7ebd-3313-492f-b639-6b67b097c5e6.png",
   },
   {
     name: "R. Mukesh Raaj",
@@ -15,7 +15,7 @@ const leadershipMembers = [
   {
     name: "V.Vignesh",
     role: "Secretary",
-    image: "public/lovable-uploads/0b6883e0-1b56-4e13-9d69-4edfaa77b119.png",
+    image: "public/img uploads/0b6883e0-1b56-4e13-9d69-4edfaa77b119.png",
   },
   {
     name: "R.Karthi",
