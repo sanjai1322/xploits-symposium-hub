@@ -25,7 +25,7 @@ const leadershipMembers = [
   {
     name: "M.Vannamathi",
     role: "Treasurer",
-    image: "/public/img uploads/3982e581-1a86-4c80-a92e-f61a2c46a49f.png",
+    image: "public/img uploads/3982e581-1a86-4c80-a92e-f61a2c46a49f.png",
   },
 ];
 
