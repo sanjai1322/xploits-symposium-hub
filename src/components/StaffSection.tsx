@@ -10,7 +10,7 @@ const leadershipMembers = [
   {
     name: "R. Mukesh Raaj",
     role: "Vice-President",
-    image: "",
+    image: "./img uploads/Mukesh.jpg",
   },
   {
     name: "V.Vignesh",
