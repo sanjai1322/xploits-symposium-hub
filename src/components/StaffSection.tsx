@@ -5,7 +5,7 @@ const leadershipMembers = [
   {
     name: "R.Layanya",
     role: "President",
-    image: "/public/img uploads/9ddf7ebd-3313-492f-b639-6b67b097c5e6.png",
+    image: "public/lovable-uploads/7352be3a-1f54-4652-b0c2-d14468fd7f26.png",
   },
   {
     name: "R. Mukesh Raaj",
